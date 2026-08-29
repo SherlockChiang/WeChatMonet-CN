@@ -202,22 +202,18 @@ EOF
   printf '%s\n' '</resources>' >> "$work_dir/res/values/colors.xml"
 
   printf '%s\n' '<?xml version="1.0" encoding="utf-8"?><resources>' > "$work_dir/res/values-night/colors.xml"
+  # night mode: restore WeChat's stock translucent-black bar so icons stay visible
+  # regardless of the in-app dark-mode setting
   write_blur_values \
     "$work_dir/res/values-night/colors.xml" \
     "df" \
-    78 \
-    "system_surface_container_dark" \
-    "system_surface_container_high_dark" \
-    "system_surface_dark" \
-    "system_primary_container_dark" || return 1
+    80 \
+    "black" || return 1
   write_blur_values \
     "$work_dir/res/values-night/colors.xml" \
     "bb" \
-    78 \
-    "system_surface_container_dark" \
-    "system_surface_container_high_dark" \
-    "system_surface_dark" \
-    "system_primary_container_dark" || return 1
+    80 \
+    "black" || return 1
   printf '%s\n' '</resources>' >> "$work_dir/res/values-night/colors.xml"
 
   "$aapt2_bin" compile --dir "$work_dir/res" -o "$work_dir/compiled_res.zip" || return 1
