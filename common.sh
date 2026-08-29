@@ -191,12 +191,28 @@ EOF
     "system_surface_container_high_light" \
     "system_surface_light" \
     "system_primary_container_light" || return 1
+  write_blur_values \
+    "$work_dir/res/values/colors.xml" \
+    "bb" \
+    69 \
+    "system_surface_container_light" \
+    "system_surface_container_high_light" \
+    "system_surface_light" \
+    "system_primary_container_light" || return 1
   printf '%s\n' '</resources>' >> "$work_dir/res/values/colors.xml"
 
   printf '%s\n' '<?xml version="1.0" encoding="utf-8"?><resources>' > "$work_dir/res/values-night/colors.xml"
   write_blur_values \
     "$work_dir/res/values-night/colors.xml" \
     "df" \
+    78 \
+    "system_surface_container_dark" \
+    "system_surface_container_high_dark" \
+    "system_surface_dark" \
+    "system_primary_container_dark" || return 1
+  write_blur_values \
+    "$work_dir/res/values-night/colors.xml" \
+    "bb" \
     78 \
     "system_surface_container_dark" \
     "system_surface_container_high_dark" \

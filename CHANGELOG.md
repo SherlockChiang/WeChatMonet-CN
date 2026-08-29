@@ -2,6 +2,15 @@
 
 所有显著变更记录于此。格式参考 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)。
 
+## [26S4-CN4] - 2026-08-29
+
+### 修复
+- **纯色底栏渲染成黑色**：原版 SolidTab 把 `color/bb` 固定为 `system_surface_dark`（恒黑）。现改为日间 `system_surface_container_light`、夜间 `system_surface_container_dark`（均为框架动态引用，跟随壁纸取色），真机验证 `bb → #fff0ecf6`。
+- **模糊底栏与纯色底栏无区别**：大陆版主底栏走 `color/bb` 槽位（`df` 仅被单个次要布局引用），原模糊生成器只写 `df` 因此看不到效果。生成器现同时写入 `bb`（69%/78% 半透明 Monet 色）与 `df`——纯色=不透明、模糊=半透明，可区分。
+
+### 注意
+- 更新本版本后若要切换模糊/纯色，请通过模块 action 菜单（音量-）重新选择；夜间模式下两种底栏均为深色系（Monet 暗面），属预期行为。
+
 ## [26S4-CN3] - 2026-08-29
 
 ### 修复
