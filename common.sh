@@ -2,11 +2,28 @@
 
 CONFIG_FILE=${CONFIG_FILE:-"${0%/*}/config.conf"}
 TARGET_PACKAGE="com.tencent.mm"
-SECONDARY_OVERLAY_SPECS="MonetWeChat:monet.com.tencent.mm MonetWeChatMultiSceneCorners:monet.multiscenecorners.com.tencent.mm MonetWeChatSolidTab:monet.solidtab.com.tencent.mm MonetWeChatClassicBubble:monet.classicbubble.com.tencent.mm MonetWeChatBubblePro:monet.bubblepro.com.tencent.mm MonetWeChatBlurTab:monet.blurtab.com.tencent.mm"
-LOOKUP_SYSTEM_COLOR_MATCH=""
-LOOKUP_SYSTEM_COLOR_VALUE=""
-COMPUTE_BLUR_COLOR_MATCH=""
-COMPUTE_BLUR_COLOR_VALUE=""
+BADGE_OVERLAY_NAME="MonetWeChatBadge"
+BADGE_OVERLAY_PACKAGE="monet.badge.${TARGET_PACKAGE}"
+SECONDARY_OVERLAY_SPECS="MonetWeChat:monet.com.tencent.mm MonetWeChatMultiSceneCorners:monet.multiscenecorners.com.tencent.mm MonetWeChatSolidTab:monet.solidtab.com.tencent.mm MonetWeChatClassicBubble:monet.classicbubble.com.tencent.mm MonetWeChatBubblePro:monet.bubblepro.com.tencent.mm MonetWeChatBlurTab:monet.blurtab.com.tencent.mm ${BADGE_OVERLAY_NAME}:${BADGE_OVERLAY_PACKAGE}"
+
+# Keep version gates in one place so the installer and action menu cannot drift.
+is_play_wechat_version() {
+  case "$1" in
+    3084|3085) return 0 ;;
+    *) return 1 ;;
+  esac
+}
+
+is_mainland_wechat_version() {
+  case "$1" in
+    3140|3141|3160) return 0 ;;
+    *) return 1 ;;
+  esac
+}
+
+is_supported_wechat_version() {
+  is_play_wechat_version "$1" || is_mainland_wechat_version "$1"
+}
 
 listen_volume_key() {
   while :; do
@@ -64,19 +81,106 @@ set_conf_value() {
   fi
 }
 
-install_static_overlay() {
-  local moddir="$1" name="$2"
-  local source_apk="$moddir/files/${name}.apk"
-  local target_dir="$moddir/system/priv-app/$name"
+get_overlay_content_dir() {
+  local moddir="$1" module_id root candidate mount_root
+  module_id="${MODID:-${moddir##*/}}"
+  [ -n "$module_id" ] || return 1
+
+  # Meta-OverlayFS exposes the actual /system lowerdir separately from the
+  # module metadata tree. Action/service scripts do not always inherit the
+  # exported MODULE_CONTENT_DIR, so keep known mount points as fallbacks.
+  for root in "${MODULE_CONTENT_DIR:-}" \
+      "/data/adb/modules/meta-overlayfs/mnt" \
+      "/data/adb/metamodule/mnt"; do
+    [ -n "$root" ] || continue
+    case "$root" in
+      */"$module_id")
+        candidate="$root"
+        mount_root="${root%/$module_id}"
+        ;;
+      *)
+        candidate="$root/$module_id"
+        mount_root="$root"
+        ;;
+    esac
+    [ "$candidate" = "$moddir" ] && continue
+    [ -d "$candidate" ] || continue
+    if command -v mountpoint >/dev/null 2>&1; then
+      mountpoint -q "$mount_root" 2>/dev/null || continue
+    fi
+    echo "$candidate"
+    return 0
+  done
+  return 1
+}
+
+install_overlay_apk() {
+  local source_apk="$1" target_moddir="$2" name="$3"
+  local target_dir="$target_moddir/system/priv-app/$name"
   [ -f "$source_apk" ] || return 1
   mkdir -p "$target_dir" || return 1
-  cp -f "$source_apk" "$target_dir/${name}.apk" || return 1
-  chmod 0755 "$moddir/system" "$moddir/system/priv-app" "$target_dir" 2>/dev/null || return 1
+  # Avoid replacing an identical APK after PackageManager has scanned it at
+  # boot; this keeps the registered path/inode stable while still repairing a
+  # missing or stale Meta-OverlayFS copy.
+  if [ ! -f "$target_dir/${name}.apk" ] || ! cmp -s "$source_apk" "$target_dir/${name}.apk" 2>/dev/null; then
+    cp -f "$source_apk" "$target_dir/${name}.apk" || return 1
+  fi
+  chmod 0755 "$target_moddir/system" "$target_moddir/system/priv-app" "$target_dir" 2>/dev/null || return 1
   chmod 0644 "$target_dir/${name}.apk" 2>/dev/null || return 1
+  if command -v chcon >/dev/null 2>&1; then
+    chcon --reference="$target_moddir/system/priv-app" "$target_dir" "$target_dir/${name}.apk" 2>/dev/null || true
+  fi
+  return 0
+}
+
+install_static_overlay() {
+  local moddir="$1" name="$2" content_dir
+  local source_apk="$moddir/files/${name}.apk"
+  install_overlay_apk "$source_apk" "$moddir" "$name" || return 1
+
+  # Keep metadata for ordinary installs and mirror the selected APK into the
+  # content tree used by Meta-OverlayFS when it is present.
+  content_dir=$(get_overlay_content_dir "$moddir" 2>/dev/null) || content_dir=""
+  if [ -n "$content_dir" ]; then
+    install_overlay_apk "$source_apk" "$content_dir" "$name" || {
+      echo "! Meta-OverlayFS 同步 $name 失败。"
+      return 1
+    }
+  fi
+  return 0
 }
 
 remove_static_overlay() {
-  rm -rf "$1/system/priv-app/$2"
+  local moddir="$1" name="$2" content_dir
+  rm -rf "$moddir/system/priv-app/$name"
+  content_dir=$(get_overlay_content_dir "$moddir" 2>/dev/null) || content_dir=""
+  [ -n "$content_dir" ] && rm -rf "$content_dir/system/priv-app/$name"
+}
+
+reconcile_overlay_content() {
+  local moddir="$1" content_dir name source_apk
+  # During a Meta-OverlayFS update, the metadata directory can temporarily
+  # contain only module.prop and an update/remove marker while the old image
+  # is still mounted. Never interpret that transient state as an empty module.
+  [ -d "$moddir/system" ] || return 0
+  [ ! -e "$moddir/update" ] || return 0
+  [ ! -e "$moddir/remove" ] || return 0
+  content_dir=$(get_overlay_content_dir "$moddir" 2>/dev/null) || return 0
+
+  # cp -af used by older meta-overlayfs versions never removes files from a
+  # previous module revision. Reconcile every known overlay directory so a
+  # removed optional feature cannot remain mounted and override current state.
+  for name in MonetWeChat MonetWeChatMultiSceneCorners MonetWeChatSolidTab \
+      MonetWeChatClassicBubble MonetWeChatBubblePro MonetWeChatBubbleProBlur \
+      MonetWeChatBlurTab "$BADGE_OVERLAY_NAME"; do
+    source_apk="$moddir/system/priv-app/$name/$name.apk"
+    if [ -f "$source_apk" ]; then
+      install_overlay_apk "$source_apk" "$content_dir" "$name" || return 1
+    else
+      rm -rf "$content_dir/system/priv-app/$name"
+    fi
+  done
+  return 0
 }
 
 install_for_secondary_users() {
@@ -99,49 +203,6 @@ install_for_secondary_users() {
   return 0
 }
 
-lookup_system_color_once() {
-  local resource_name="$1" raw
-  raw=$(cmd overlay lookup android "android:color/$resource_name" 2>/dev/null | tr -d '\r' | sed -e 's/[[:space:]]*$//')
-  [ -n "$raw" ] || return 1
-  raw="${raw#\#}"
-  raw="${raw#0x}"
-  raw="${raw#0X}"
-  if [ ${#raw} -eq 8 ]; then
-    echo "${raw#??}"
-  elif [ ${#raw} -eq 6 ]; then
-    echo "$raw"
-  else
-    return 1
-  fi
-}
-
-lookup_system_color() {
-  local resource_name raw
-  LOOKUP_SYSTEM_COLOR_MATCH=""
-  LOOKUP_SYSTEM_COLOR_VALUE=""
-  for resource_name in "$@"; do
-    raw=$(lookup_system_color_once "$resource_name") || continue
-    LOOKUP_SYSTEM_COLOR_MATCH="$resource_name"
-    LOOKUP_SYSTEM_COLOR_VALUE="$raw"
-    return 0
-  done
-  return 1
-}
-
-apply_opacity_to_rgb() {
-  local rgb="$1" opacity_percent="$2" alpha_dec
-  alpha_dec=$(((opacity_percent * 255 + 50) / 100))
-  printf "0x%02X%s" "$alpha_dec" "$rgb"
-}
-
-compute_blur_color() {
-  local opacity_percent="$1"
-  shift
-  lookup_system_color "$@" || return 1
-  COMPUTE_BLUR_COLOR_MATCH="$LOOKUP_SYSTEM_COLOR_MATCH"
-  COMPUTE_BLUR_COLOR_VALUE=$(apply_opacity_to_rgb "$LOOKUP_SYSTEM_COLOR_VALUE" "$opacity_percent")
-}
-
 list_target_users() {
   if [ -d /data/user ]; then
     ls /data/user 2>/dev/null | tr '\n' ' '
@@ -150,113 +211,54 @@ list_target_users() {
   fi
 }
 
-write_blur_values() {
-  local values_file="$1" resource_name="$2" opacity="$3" color_value
-  shift 3
-  compute_blur_color "$opacity" "$@" || return 1
-  color_value="${COMPUTE_BLUR_COLOR_VALUE#0x}"
-  echo "- 写入 $resource_name: #$color_value (${COMPUTE_BLUR_COLOR_MATCH}, ${opacity}%)"
-  echo "    <color name=\"$resource_name\">#$color_value</color>" >> "$values_file"
-}
-
-build_monet_overlay() {
-  local moddir="$1" log_prefix="$2" output_dir="$3"
-  local work_dir="$moddir/Workspace"
-  local aapt2_bin="$moddir/files/aapt2"
-  local output_apk="$output_dir/MonetWeChatBlurTab.apk"
-
-  [ -x "$aapt2_bin" ] || chmod 0755 "$aapt2_bin" 2>/dev/null
-  [ -x "$aapt2_bin" ] || return 1
-  rm -rf "$work_dir"
-  mkdir -p "$work_dir/res/values" "$work_dir/res/values-night" "$output_dir"
-
-  cat > "$work_dir/AndroidManifest.xml" <<EOF
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="monet.blurtab.${TARGET_PACKAGE}"
-    android:versionCode="1"
-    android:versionName="1.0">
-    <uses-sdk android:minSdkVersion="31" android:targetSdkVersion="36" />
-    <overlay android:targetPackage="${TARGET_PACKAGE}" android:isStatic="true" android:priority="10" />
-    <application android:hasCode="false" android:extractNativeLibs="false" />
-</manifest>
-EOF
-
-  printf '%s\n' '<?xml version="1.0" encoding="utf-8"?><resources>' > "$work_dir/res/values/colors.xml"
-  write_blur_values \
-    "$work_dir/res/values/colors.xml" \
-    "df" \
-    69 \
-    "system_surface_container_light" \
-    "system_surface_container_high_light" \
-    "system_surface_light" \
-    "system_primary_container_light" || return 1
-  write_blur_values \
-    "$work_dir/res/values/colors.xml" \
-    "bb" \
-    69 \
-    "system_surface_container_light" \
-    "system_surface_container_high_light" \
-    "system_surface_light" \
-    "system_primary_container_light" || return 1
-  printf '%s\n' '</resources>' >> "$work_dir/res/values/colors.xml"
-
-  printf '%s\n' '<?xml version="1.0" encoding="utf-8"?><resources>' > "$work_dir/res/values-night/colors.xml"
-  # night mode: restore WeChat's stock translucent-black bar so icons stay visible
-  # regardless of the in-app dark-mode setting
-  write_blur_values \
-    "$work_dir/res/values-night/colors.xml" \
-    "df" \
-    80 \
-    "black" || return 1
-  write_blur_values \
-    "$work_dir/res/values-night/colors.xml" \
-    "bb" \
-    80 \
-    "black" || return 1
-  printf '%s\n' '</resources>' >> "$work_dir/res/values-night/colors.xml"
-
-  "$aapt2_bin" compile --dir "$work_dir/res" -o "$work_dir/compiled_res.zip" || return 1
-  "$aapt2_bin" link \
-    -I /system/framework/framework-res.apk \
-    --manifest "$work_dir/AndroidManifest.xml" \
-    -o "$output_apk" \
-    "$work_dir/compiled_res.zip" || return 1
-
-  rm -rf "$work_dir"
-  chmod 0644 "$output_apk"
-  [ -n "$log_prefix" ] && echo "$log_prefix 已根据当前 Monet 颜色生成模糊底栏"
-  return 0
-}
-
 apply_blur_overlay() {
-  local moddir="$1" users="$2" log_prefix="$3" attempt=1
-  local output_dir="$moddir/system/priv-app/MonetWeChatBlurTab"
-  local staged_dir="$moddir/system/priv-app/.MonetWeChatBlurTab-new"
-
-  rm -rf "$staged_dir"
-  while [ "$attempt" -le 5 ]; do
-    build_monet_overlay "$moddir" "$log_prefix" "$staged_dir" && break
-    rm -rf "$staged_dir"
-    [ "$attempt" -eq 5 ] && break
-    [ -n "$log_prefix" ] && echo "$log_prefix Monet 取色尚未就绪，2 秒后重试（$attempt/5）"
-    sleep 2
-    attempt=$((attempt + 1))
-  done
-
-  if [ "$attempt" -gt 5 ] || [ ! -f "$staged_dir/MonetWeChatBlurTab.apk" ]; then
-    rm -rf "$staged_dir"
-    [ -n "$log_prefix" ] && echo "$log_prefix 动态生成模糊底栏失败，已保留现有底栏"
+  local moddir="$1" log_prefix="$3"
+  # This APK is built and v3-signed on the host.  Runtime aapt2 output is not
+  # installable on Android 14/15 because PackageManager requires a signature.
+  install_static_overlay "$moddir" "MonetWeChatBlurTab" || {
+    [ -n "$log_prefix" ] && echo "$log_prefix 预签名模糊底栏安装失败"
     return 1
+  }
+  [ -n "$log_prefix" ] && echo "$log_prefix 已安装预签名 Monet 模糊底栏"
+  if [ "$(get_conf_value "$moddir/config.conf" "enable_multi_user" "0")" = "1" ]; then
+    install_for_secondary_users "$moddir" || return 1
   fi
-
-  remove_static_overlay "$moddir" "MonetWeChatBlurTab"
-  mv "$staged_dir" "$output_dir" || return 1
   return 0
 }
 
 disable_blur_overlay() {
   remove_static_overlay "$1" "MonetWeChatBlurTab"
+}
+
+apply_badge_overlay() {
+  local moddir="$1" log_prefix="$3"
+  # The badge overlay is also prebuilt and v3-signed.  Its `ac` and `Red_100`
+  # slots reference Android's light/dark system_primary colors, so the red
+  # accent follows the current Monet palette after a configuration change.
+  install_static_overlay "$moddir" "$BADGE_OVERLAY_NAME" || {
+    [ -n "$log_prefix" ] && echo "$log_prefix 预签名 Monet 红点覆盖安装失败"
+    return 1
+  }
+  [ -n "$log_prefix" ] && echo "$log_prefix 已安装预签名 Monet 红点覆盖（ac/Red_100）"
+  if [ "$(get_conf_value "$moddir/config.conf" "enable_multi_user" "0")" = "1" ]; then
+    install_for_secondary_users "$moddir" || {
+      [ -n "$log_prefix" ] && echo "$log_prefix Monet 红点覆盖已安装，但部分次要用户尚未启用"
+    }
+  fi
+  return 0
+}
+
+disable_badge_overlay() {
+  remove_static_overlay "$1" "$BADGE_OVERLAY_NAME"
+}
+
+enable_badge_overlay_for_users() {
+  local user_list="${1:-$(list_target_users)}" user_id failure=0
+  for user_id in $user_list; do
+    [ -n "$user_id" ] || continue
+    cmd overlay enable --user "$user_id" "$BADGE_OVERLAY_PACKAGE" >/dev/null 2>&1 || failure=1
+  done
+  [ "$failure" -eq 0 ]
 }
 
 select_bubble_style_legacy_removed() {

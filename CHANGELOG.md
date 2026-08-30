@@ -2,6 +2,18 @@
 
 所有显著变更记录于此。格式参考 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)。
 
+## [26S4-CN6] - 2026-08-30
+
+### 修复
+- **重启后底栏覆盖丢失**：模糊底栏改为预编译、预签名的静态 RRO，避免 Android 14/15 丢弃运行时生成的未签名 APK。
+- **深色模式底栏变成纯黑**：纯色与模糊底栏夜间值改用 Android `system_surface_container_dark`，保持 Monet 深色表面。
+- **资源型红点不跟随 Monet**：新增预签名 Badge RRO，使 `color/ac` 与 `Red_100` 跟随系统主色。预编译 SVG 和使用其他颜色槽位的控件仍保留微信原色。
+
+### 维护
+- 微信升级到未适配版本时，开机脚本自动停用旧 overlay，待新映射发布后再恢复。
+- 兼容 KernelSU Meta-OverlayFS：静态底栏与红点覆盖同步到实际挂载内容层，并在开机清理旧版本残留 overlay。
+- 安装器、action、service 与 boot-completed 共用同一版本门禁和静态 overlay 恢复逻辑。
+
 ## [26S4-CN5] - 2026-08-29
 
 ### 修复

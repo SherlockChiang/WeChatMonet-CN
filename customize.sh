@@ -32,9 +32,9 @@ check_wechat_version() {
   local version_code
   version_code=$(dumpsys package com.tencent.mm 2>/dev/null | sed -n 's/.*versionCode=\([0-9][0-9]*\).*/\1/p' | head -n 1)
 
-  if [ "$version_code" = "3084" ] || [ "$version_code" = "3085" ]; then
+  if is_play_wechat_version "$version_code"; then
     echo "- 已确认微信版本：Play 版 8.0.72 (${version_code})"
-  elif [ "$version_code" = "3140" ] || [ "$version_code" = "3141" ] || [ "$version_code" = "3160" ]; then
+  elif is_mainland_wechat_version "$version_code"; then
     WECHAT_CN="1"
     echo "- 已确认微信版本：大陆版 (${version_code})"
   else
@@ -138,7 +138,22 @@ choose_tab_style() {
   select_tab_style "$MODPATH" "$CONFIG" || abort '! Monet 模糊底栏生成失败。'
 }
 
+prepare_badge_overlay() {
+  # The badge APK is prebuilt and v3-signed.  Install it during customization
+  # so PackageManager can scan it on the next boot; no runtime aapt2 step is
+  # needed (or safe) on Android 14+.
+  if apply_badge_overlay "$MODPATH" "$(list_target_users)" "-"; then
+    echo '- 已安装 Monet 红点覆盖。'
+  else
+    echo '! Monet 红点覆盖安装失败，将保留基础覆盖。'
+  fi
+}
+
 finish_install() {
+  # Meta-OverlayFS copies system/ into its image after customization. Reconcile
+  # while the selected payload is still present so removed optional overlays do
+  # not survive an update in the image's old content tree.
+  reconcile_overlay_content "$MODPATH" || abort '! Meta-OverlayFS overlay 内容同步失败。'
   set_conf_value "$CONFIG" "is_first_install" "1"
   set_perm_recursive "$MODPATH" 0 0 0755 0644
   set_perm "$MODPATH/action.sh" 0 0 0755
@@ -160,13 +175,14 @@ main() {
   install_base_overlay
   choose_multi_scene_corners
   if [ "$WECHAT_CN" = "1" ]; then
-    echo '- 大陆版 8.0.76 气泡资源结构与 Play 版不同，跳过气泡样式安装。'
+    echo '- 大陆版 8.0.76/8.0.77 气泡资源结构与 Play 版不同，跳过气泡样式安装。'
     remove_static_overlay "$MODPATH" "MonetWeChatBubblePro"
     remove_static_overlay "$MODPATH" "MonetWeChatClassicBubble"
   else
     choose_bubble_style
   fi
   choose_tab_style
+  prepare_badge_overlay
   finish_install
 }
 
