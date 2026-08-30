@@ -175,10 +175,14 @@ main() {
   install_base_overlay
   choose_multi_scene_corners
   if [ "$WECHAT_CN" = "1" ]; then
-    echo '- 大陆版 8.0.76/8.0.77 气泡资源结构与 Play 版不同，跳过气泡样式安装。'
-    remove_static_overlay "$MODPATH" "MonetWeChatBubblePro"
-    remove_static_overlay "$MODPATH" "MonetWeChatClassicBubble"
+    echo '- 正在安装大陆版 Monet 会话气泡（普通文本消息）...'
+    install_mainland_bubble_overlay "$MODPATH" "-" || abort '! 大陆版 Monet 会话气泡安装失败。'
   else
+    # Do not leave the mainland-only package enabled when the module is
+    # reinstalled while the Play build is present; Play keeps its own
+    # bubble_style selection below.
+    disable_chat_bubble_overlay_for_users
+    remove_static_overlay "$MODPATH" "$CHAT_BUBBLE_OVERLAY_NAME"
     choose_bubble_style
   fi
   choose_tab_style

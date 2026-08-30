@@ -4,7 +4,9 @@ CONFIG_FILE=${CONFIG_FILE:-"${0%/*}/config.conf"}
 TARGET_PACKAGE="com.tencent.mm"
 BADGE_OVERLAY_NAME="MonetWeChatBadge"
 BADGE_OVERLAY_PACKAGE="monet.badge.${TARGET_PACKAGE}"
-SECONDARY_OVERLAY_SPECS="MonetWeChat:monet.com.tencent.mm MonetWeChatMultiSceneCorners:monet.multiscenecorners.com.tencent.mm MonetWeChatSolidTab:monet.solidtab.com.tencent.mm MonetWeChatClassicBubble:monet.classicbubble.com.tencent.mm MonetWeChatBubblePro:monet.bubblepro.com.tencent.mm MonetWeChatBlurTab:monet.blurtab.com.tencent.mm ${BADGE_OVERLAY_NAME}:${BADGE_OVERLAY_PACKAGE}"
+CHAT_BUBBLE_OVERLAY_NAME="MonetWeChatChatBubble"
+CHAT_BUBBLE_OVERLAY_PACKAGE="monet.chatbubble.${TARGET_PACKAGE}"
+SECONDARY_OVERLAY_SPECS="MonetWeChat:monet.com.tencent.mm ${CHAT_BUBBLE_OVERLAY_NAME}:${CHAT_BUBBLE_OVERLAY_PACKAGE} MonetWeChatMultiSceneCorners:monet.multiscenecorners.com.tencent.mm MonetWeChatSolidTab:monet.solidtab.com.tencent.mm MonetWeChatClassicBubble:monet.classicbubble.com.tencent.mm MonetWeChatBubblePro:monet.bubblepro.com.tencent.mm MonetWeChatBlurTab:monet.blurtab.com.tencent.mm ${BADGE_OVERLAY_NAME}:${BADGE_OVERLAY_PACKAGE}"
 
 # Keep version gates in one place so the installer and action menu cannot drift.
 is_play_wechat_version() {
@@ -38,6 +40,7 @@ listen_volume_key() {
 
 select_bubble_style() {
   local moddir="$1" config="$2"
+  disable_legacy_bubble_overlays_for_users
   remove_static_overlay "$moddir" "MonetWeChatBubblePro"
   remove_static_overlay "$moddir" "MonetWeChatBubbleProBlur"
   remove_static_overlay "$moddir" "MonetWeChatClassicBubble"
@@ -157,6 +160,48 @@ remove_static_overlay() {
   [ -n "$content_dir" ] && rm -rf "$content_dir/system/priv-app/$name"
 }
 
+remove_legacy_bubble_overlays() {
+  local moddir="$1" name
+  for name in MonetWeChatBubblePro MonetWeChatBubbleProBlur MonetWeChatClassicBubble; do
+    remove_static_overlay "$moddir" "$name"
+  done
+}
+
+disable_legacy_bubble_overlays_for_users() {
+  local user_list="${1:-$(list_target_users)}" user_id package_name
+  for user_id in $user_list; do
+    [ -n "$user_id" ] || continue
+    for package_name in monet.bubblepro.com.tencent.mm monet.classicbubble.com.tencent.mm; do
+      # A package may not be registered on a first install; disabling it is
+      # intentionally best-effort and must not abort the CN installation.
+      cmd overlay disable --user "$user_id" "$package_name" >/dev/null 2>&1 || true
+    done
+  done
+}
+
+install_mainland_bubble_overlay() {
+  local moddir="$1" log_prefix="${2:-}" source_apk
+  source_apk="$moddir/files/${CHAT_BUBBLE_OVERLAY_NAME}.apk"
+
+  # The mainland client uses image-backed 9-patch resources rather than the
+  # Play client's shape resources. Keep this package independent so the Play
+  # bubble selection and its persisted bubble_style value remain untouched.
+  if [ ! -f "$source_apk" ]; then
+    disable_chat_bubble_overlay_for_users
+    [ -n "$log_prefix" ] && echo "$log_prefix 缺少 files/${CHAT_BUBBLE_OVERLAY_NAME}.apk"
+    return 1
+  fi
+  if ! install_static_overlay "$moddir" "$CHAT_BUBBLE_OVERLAY_NAME"; then
+    disable_chat_bubble_overlay_for_users
+    [ -n "$log_prefix" ] && echo "$log_prefix 大陆版 Monet 会话气泡安装失败"
+    return 1
+  fi
+  disable_legacy_bubble_overlays_for_users
+  remove_legacy_bubble_overlays "$moddir"
+  [ -n "$log_prefix" ] && echo "$log_prefix 已安装大陆版 Monet 会话气泡"
+  return 0
+}
+
 reconcile_overlay_content() {
   local moddir="$1" content_dir name source_apk
   # During a Meta-OverlayFS update, the metadata directory can temporarily
@@ -171,7 +216,7 @@ reconcile_overlay_content() {
   # previous module revision. Reconcile every known overlay directory so a
   # removed optional feature cannot remain mounted and override current state.
   for name in MonetWeChat MonetWeChatMultiSceneCorners MonetWeChatSolidTab \
-      MonetWeChatClassicBubble MonetWeChatBubblePro MonetWeChatBubbleProBlur \
+      "$CHAT_BUBBLE_OVERLAY_NAME" MonetWeChatClassicBubble MonetWeChatBubblePro MonetWeChatBubbleProBlur \
       MonetWeChatBlurTab "$BADGE_OVERLAY_NAME"; do
     source_apk="$moddir/system/priv-app/$name/$name.apk"
     if [ -f "$source_apk" ]; then
@@ -259,6 +304,25 @@ enable_badge_overlay_for_users() {
     cmd overlay enable --user "$user_id" "$BADGE_OVERLAY_PACKAGE" >/dev/null 2>&1 || failure=1
   done
   [ "$failure" -eq 0 ]
+}
+
+enable_chat_bubble_overlay_for_users() {
+  local user_list="${1:-$(list_target_users)}" user_id failure=0
+  for user_id in $user_list; do
+    [ -n "$user_id" ] || continue
+    cmd overlay enable --user "$user_id" "$CHAT_BUBBLE_OVERLAY_PACKAGE" >/dev/null 2>&1 || failure=1
+  done
+  [ "$failure" -eq 0 ]
+}
+
+disable_chat_bubble_overlay_for_users() {
+  local user_list="${1:-$(list_target_users)}" user_id
+  for user_id in $user_list; do
+    [ -n "$user_id" ] || continue
+    # The package can be absent when the module was first installed on a Play
+    # build; disabling it is deliberately best-effort in that case.
+    cmd overlay disable --user "$user_id" "$CHAT_BUBBLE_OVERLAY_PACKAGE" >/dev/null 2>&1 || true
+  done
 }
 
 select_bubble_style_legacy_removed() {

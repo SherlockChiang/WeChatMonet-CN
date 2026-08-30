@@ -6,7 +6,7 @@ TARGET_PACKAGE="com.tencent.mm"
 
 . "$MODDIR/common.sh"
 
-OVERLAY_PACKAGES="monet.com.tencent.mm monet.bubblepro.com.tencent.mm monet.classicbubble.com.tencent.mm monet.multiscenecorners.com.tencent.mm monet.solidtab.com.tencent.mm monet.blurtab.com.tencent.mm ${BADGE_OVERLAY_PACKAGE}"
+OVERLAY_PACKAGES="monet.com.tencent.mm ${CHAT_BUBBLE_OVERLAY_PACKAGE} monet.bubblepro.com.tencent.mm monet.classicbubble.com.tencent.mm monet.multiscenecorners.com.tencent.mm monet.solidtab.com.tencent.mm monet.blurtab.com.tencent.mm ${BADGE_OVERLAY_PACKAGE}"
 
 overlay_installed() {
   pm path "$1" >/dev/null 2>&1
@@ -19,7 +19,7 @@ set_overlay_state() {
 }
 
 restore_overlay_state() {
-  local user_id="$1" bubble_style tab_style
+  local user_id="$1" version_code="$2" bubble_style tab_style
   bubble_style=$(get_conf_value "$CONFIG" "bubble_style" "modern")
   tab_style=$(get_conf_value "$CONFIG" "blur_enabled" "0")
 
@@ -28,13 +28,20 @@ restore_overlay_state() {
     set_overlay_state "$user_id" "$package_name" disable
   done
 
-  # The base overlay is always required. It also represents the modern bubble.
+  # The base overlay is always required. Play's modern bubble is part of that
+  # package; mainland builds use the dedicated image-backed RRO below.
   set_overlay_state "$user_id" "monet.com.tencent.mm" enable
 
-  case "$bubble_style" in
-    pro) set_overlay_state "$user_id" "monet.bubblepro.com.tencent.mm" enable ;;
-    classic) set_overlay_state "$user_id" "monet.classicbubble.com.tencent.mm" enable ;;
-  esac
+  if is_mainland_wechat_version "$version_code"; then
+    if [ -f "$MODDIR/system/priv-app/$CHAT_BUBBLE_OVERLAY_NAME/$CHAT_BUBBLE_OVERLAY_NAME.apk" ]; then
+      set_overlay_state "$user_id" "$CHAT_BUBBLE_OVERLAY_PACKAGE" enable
+    fi
+  else
+    case "$bubble_style" in
+      pro) set_overlay_state "$user_id" "monet.bubblepro.com.tencent.mm" enable ;;
+      classic) set_overlay_state "$user_id" "monet.classicbubble.com.tencent.mm" enable ;;
+    esac
+  fi
 
   if [ "$(get_conf_value "$CONFIG" "multi_scene_corners_enabled" "0")" = "1" ]; then
     set_overlay_state "$user_id" "monet.multiscenecorners.com.tencent.mm" enable
@@ -73,6 +80,6 @@ if ! is_supported_wechat_version "$version_code"; then
 fi
 
 for user_id in $(list_target_users); do
-  restore_overlay_state "$user_id"
+  restore_overlay_state "$user_id" "$version_code"
   am force-stop --user "$user_id" "$TARGET_PACKAGE" 2>/dev/null
 done

@@ -2,10 +2,10 @@
 
 基于上游 WeChat Monet Pro 26S4（作者：枯れ木, 1e93d, HSSkyBoy，MT 论坛发布）的微信大陆版 KernelSU/Magisk 模块适配。通过 Android Runtime Resource Overlay（RRO）为微信提供 Material You / Monet 动态取色，**不修改微信 DEX，无 Xposed 依赖**。
 
-- 当前版本：**26S4-CN6**（versionCode 260819）
+- 当前版本：**26S4-CN7**（versionCode 260820）
 - 支持微信：**大陆版 8.0.76 / 8.0.77**（versionCode `3140` / `3141` / `3160`，均已核对资源表）
 - 系统要求：Android 14+，KernelSU 或 Magisk
-- 大陆版聊天气泡样式暂不可移植（见[已知限制](#已知限制)）
+- 普通文本会话气泡已支持 Monet 取色；红包、转账、链接气泡仍保持微信原色
 
 ## 安装
 
@@ -29,11 +29,11 @@
 | Monet 动态取色主体（234 色，日/夜） | ✅ | 顶栏 / 输入栏 / 开关 / 对话框 / 按钮等框架色，保留 `@android:color/system_*` 引用，跟随壁纸 |
 | 纯色底栏（SolidTab） | ✅ | |
 | 模糊底栏（BlurTab，预签名 RRO） | ✅ | `color/df` 与主底栏 `color/bb` 直接引用系统 Monet 亮/暗表面，重启后仍可注册 |
-| 聊天气泡基础换肤 | ✅ 部分 | `c2c_*` 消息节点背景等入口随基础包生效 |
+| 普通文本会话气泡 Monet 取色 | ✅ | 接收气泡使用 Monet 表面容器色，发送气泡使用 Monet 主色容器色；日/夜均跟随壁纸，并保留原生气泡尾巴与文字内边距 |
 | 多场景圆角（输入栏 / 支付键盘） | ✅ | 消息引用表面色暂缺 |
 | 关于页文案注入 | ✅ | 已适配为大陆版信息 |
 | 红点与红色强调槽位（预签名 RRO） | ✅ 部分 | `color/ac`、`Red_100` 引用系统 Monet 主色，覆盖使用这两个槽位的资源型红点和少量共用红色控件；预编译 SVG 红点及使用其他槽位的底栏选中项仍保留微信原色 |
-| 聊天气泡样式（现代圆角 / Pro / 经典） | ❌ | 大陆版为 9-patch 图片气泡架构，Play 的 shape 气泡资源不存在 |
+| Play 气泡样式选择（现代圆角 / Pro / 经典） | ❌ | 大陆版为图片气泡架构，保留自身形状，仅替换普通文本气泡颜色 |
 | 红包 / 转账 / 链接气泡变色 | ❌ | 蒙版资源在大陆版无对应，保持微信原色 |
 | 主文字色取色 | ❌（有意为之） | 文字槽位与 Play 语义不同，强行覆盖会导致文字染色；文字保持微信原生黑/白 |
 | 桌面主题图标（Themed Icon） | ❌ | 大陆版无 `icon_fg` / `icon_themed` 资源 |
@@ -59,7 +59,7 @@ adb shell cmd overlay dump monet.com.tencent.mm
 adb shell cmd overlay lookup com.tencent.mm com.tencent.mm:color/BW_0_Alpha_0_9
 
 # 回滚：停用模块，或执行
-adb shell cmd overlay disable --user 0 monet.com.tencent.mm monet.multiscenecorners.com.tencent.mm monet.solidtab.com.tencent.mm monet.blurtab.com.tencent.mm monet.badge.com.tencent.mm monet.bubblepro.com.tencent.mm monet.classicbubble.com.tencent.mm
+adb shell cmd overlay disable --user 0 monet.com.tencent.mm monet.chatbubble.com.tencent.mm monet.multiscenecorners.com.tencent.mm monet.solidtab.com.tencent.mm monet.blurtab.com.tencent.mm monet.badge.com.tencent.mm monet.bubblepro.com.tencent.mm monet.classicbubble.com.tencent.mm
 ```
 
 适配工作区根目录的 `rerun_pipeline.sh` 会先生成并校验 patched APK，再签名（脚本不随模块 ZIP 发布）；签名器若找不到 `zipalign`，请传入 `--zipalign PATH`。只有确认可以接受未对齐 APK 时才使用 `--skip-zipalign`，流水线不会自动静默降级。
@@ -70,7 +70,7 @@ adb shell cmd overlay disable --user 0 monet.com.tencent.mm monet.multiscenecorn
 
 ## 已知限制
 
-- 大陆版聊天气泡是图片（9-patch）架构，气泡样式与红包/转账/链接气泡变色不可移植，除非腾讯上线与 Play 一致的 shape 气泡资源。
+- 大陆版普通文本会话气泡通过独立 RRO 跟随 Monet 取色；Play 版的现代圆角 / Pro / 经典形状选择，以及红包、转账、链接气泡变色仍不可移植。
 - 约 28 个颜色为 `?attr` 主题属性引用，无法从 shell 取值，保持微信原色。
 - 文字类槽位不取色（避免文字染色），整体是「背景彩、文字不彩」的半 Monet 观感。
 - 微信 8.0.77 默认启用预编译 SVG（`SVGBuildConfig.WxSVGCode=true`）。这类红点由 `com.tencent.mm.boot.svg.code.drawable.*` 直接绘制并含硬编码颜色，RRO 无法覆盖；本模块通过 `color/ac` 与 `Red_100` 稳定覆盖资源型红点及少量共用红色控件。使用其他颜色槽位的底栏选中项不会因此变色。全量动态红点需要修改微信 DEX 或使用运行时 Hook，本模块不做这两类改动。

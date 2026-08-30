@@ -1,7 +1,7 @@
 id=WeChat_Monet_Pro
 name=WeChat Monet Pro CN
-version=26S4-CN6
-versionCode=260819
+version=26S4-CN7
+versionCode=260820
 author=枯れ木, 1e93d, HSSkyBoy
-description=微信莫奈取色 · 大陆版适配（8.0.76/8.0.77，versionCode 3140/3141/3160）：基础 Monet 动态取色、多场景圆角、纯色/模糊底栏、资源型红点与共用强调色（部分）。基于 WeChat Monet Pro（MT论坛）重映射大陆版资源名，气泡样式暂不可移植。
+description=微信莫奈取色 · 大陆版适配（8.0.76/8.0.77，versionCode 3140/3141/3160）：基础 Monet 动态取色、多场景圆角、普通文本会话气泡、纯色/模糊底栏、资源型红点与共用强调色（部分）。基于 WeChat Monet Pro（MT论坛）重映射大陆版资源名。
 updateJson=https://raw.githubusercontent.com/SherlockChiang/WeChatMonet-CN/main/update.json
