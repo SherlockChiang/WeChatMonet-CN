@@ -78,6 +78,6 @@ adb shell cmd overlay disable --user 0 monet.com.tencent.mm monet.chatbubble.com
 
 ## 致谢与声明
 
-- 原模块 WeChat Monet Pro（26S4）由 **枯れ木、1e93d、HSSkyBoy** 开发，本仓库仅做大陆版资源名重映射与兼容性维护，原作者版权保留。
+- 原模块 WeChat Monet Pro（26S4）由 **枯れ木、1e93d、HSSkyBoy、nikobe918** 开发，本仓库仅做大陆版资源名重映射与兼容性维护，原作者版权保留。
 - `files/aapt2` 来自 Android Open Source Project（Apache-2.0）。
 - 本项目与腾讯微信无关，仅供学习研究，请于下载后 24 小时内自行斟酌保留必要性。
