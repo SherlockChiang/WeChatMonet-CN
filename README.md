@@ -2,7 +2,7 @@
 
 基于上游 WeChat Monet Pro 26S4（作者：枯れ木, 1e93d, HSSkyBoy，MT 论坛发布）的微信大陆版 KernelSU/Magisk 模块适配。通过 Android Runtime Resource Overlay（RRO）为微信提供 Material You / Monet 动态取色，**不修改微信 DEX，无 Xposed 依赖**。
 
-- 当前版本：**26S4-CN7**（versionCode 260820）
+- 当前版本：**26S4-CN8**（versionCode 260821）
 - 支持微信：**大陆版 8.0.76 / 8.0.77**（versionCode `3140` / `3141` / `3160`，均已核对资源表）
 - 系统要求：Android 14+，KernelSU 或 Magisk
 - 普通文本会话气泡已支持 Monet 取色；红包、转账、链接气泡仍保持微信原色
