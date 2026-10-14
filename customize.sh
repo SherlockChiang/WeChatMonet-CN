@@ -31,6 +31,8 @@ WECHAT_CN="0"
 check_wechat_version() {
   local version_code
   version_code=$(dumpsys package com.tencent.mm 2>/dev/null | sed -n 's/.*versionCode=\([0-9][0-9]*\).*/\1/p' | head -n 1)
+  WECHAT_VERSION_CODE="$version_code"
+  export WECHAT_VERSION_CODE
 
   if is_play_wechat_version "$version_code"; then
     echo "- 已确认微信版本：Play 版 8.0.72 (${version_code})"
@@ -38,7 +40,7 @@ check_wechat_version() {
     WECHAT_CN="1"
     echo "- 已确认微信版本：大陆版 (${version_code})"
   else
-    abort "! 仅支持微信大陆版 8.0.76/8.0.77 (3140/3141/3160) / Play 版 8.0.72 (3084/3085)，检测到 versionCode=${version_code:-未知}。"
+    abort "! 仅支持微信大陆版 8.0.76/8.0.77/8.0.79 (3140/3141/3160/3182) / Play 版 8.0.72 (3084/3085)，检测到 versionCode=${version_code:-未知}。"
   fi
 }
 

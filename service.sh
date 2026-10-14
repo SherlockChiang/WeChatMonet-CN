@@ -11,6 +11,8 @@ until [ "$(getprop sys.boot_completed)" = "1" ]; do
 done
 
 version_code=$(dumpsys package com.tencent.mm 2>/dev/null | sed -n 's/.*versionCode=\([0-9][0-9]*\).*/\1/p' | head -n 1)
+WECHAT_VERSION_CODE="$version_code"
+export WECHAT_VERSION_CODE
 if ! is_supported_wechat_version "$version_code"; then
   echo "! 当前微信版本不受支持（versionCode=${version_code:-未知}），跳过覆盖启用。"
   exit 0

@@ -18,7 +18,7 @@ is_play_wechat_version() {
 
 is_mainland_wechat_version() {
   case "$1" in
-    3140|3141|3160) return 0 ;;
+    3140|3141|3160|3182) return 0 ;;
     *) return 1 ;;
   esac
 }
@@ -136,9 +136,29 @@ install_overlay_apk() {
   return 0
 }
 
+overlay_source_apk() {
+  local moddir="$1" name="$2" version="${WECHAT_VERSION_CODE:-}" candidate
+  if [ -n "$version" ]; then
+    candidate="$moddir/files/${name}-${version}.apk"
+    [ -f "$candidate" ] && { echo "$candidate"; return 0; }
+    if [ "$version" = "3182" ]; then
+      case "$name" in
+        MonetWeChat|MonetWeChatBadge|MonetWeChatChatBubble|MonetWeChatMultiSceneCorners|MonetWeChatSolidTab|MonetWeChatBlurTab)
+          echo "! 缺少 ${name}-${version}.apk，不能使用旧版混淆资源。" >&2
+          return 1
+          ;;
+      esac
+    fi
+  fi
+  candidate="$moddir/files/${name}.apk"
+  [ -f "$candidate" ] && { echo "$candidate"; return 0; }
+  return 1
+}
+
 install_static_overlay() {
   local moddir="$1" name="$2" content_dir
-  local source_apk="$moddir/files/${name}.apk"
+  local source_apk
+  source_apk=$(overlay_source_apk "$moddir" "$name") || return 1
   install_overlay_apk "$source_apk" "$moddir" "$name" || return 1
 
   # Keep metadata for ordinary installs and mirror the selected APK into the
@@ -181,7 +201,7 @@ disable_legacy_bubble_overlays_for_users() {
 
 install_mainland_bubble_overlay() {
   local moddir="$1" log_prefix="${2:-}" source_apk
-  source_apk="$moddir/files/${CHAT_BUBBLE_OVERLAY_NAME}.apk"
+  source_apk=$(overlay_source_apk "$moddir" "$CHAT_BUBBLE_OVERLAY_NAME") || source_apk=""
 
   # The mainland client uses image-backed 9-patch resources rather than the
   # Play client's shape resources. Keep this package independent so the Play

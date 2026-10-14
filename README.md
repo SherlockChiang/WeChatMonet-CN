@@ -2,8 +2,8 @@
 
 基于上游 WeChat Monet Pro 26S4（作者：枯れ木, 1e93d, HSSkyBoy，MT 论坛发布）的微信大陆版 KernelSU/Magisk 模块适配。通过 Android Runtime Resource Overlay（RRO）为微信提供 Material You / Monet 动态取色，**不修改微信 DEX，无 Xposed 依赖**。
 
-- 当前版本：**26S4-CN10**（versionCode 260825）
-- 支持微信：**大陆版 8.0.76 / 8.0.77**（versionCode `3140` / `3141` / `3160`，均已核对资源表）
+- 当前版本：**26S4-CN12**（versionCode 261015）
+- 支持微信：**大陆版 8.0.76 / 8.0.77 / 8.0.79**（versionCode `3140` / `3141` / `3160` / `3182`，均已核对资源表）
 - 系统要求：Android 14+，KernelSU 或 Magisk
 - 普通文本会话气泡已支持 Monet 取色；链接文字跟随 Monet 主色；红包、转账气泡仍保持微信原色
 
@@ -24,14 +24,14 @@
 
 ## 功能与兼容性
 
-| 功能 | 大陆版 8.0.76 / 8.0.77 | 说明 |
+| 功能 | 大陆版 8.0.76 / 8.0.77 / 8.0.79 | 说明 |
 |---|---|---|
-| Monet 动态取色主体（234 色，日/夜） | ✅ | 顶栏 / 输入栏 / 开关 / 对话框 / 按钮等框架色，保留 `@android:color/system_*` 引用，跟随壁纸 |
+| Monet 动态取色主体（日/夜） | ✅ | 3182 明确映射 212 个颜色、16 个 drawable 和 1 个图标资源；顶栏 / 输入栏 / 开关 / 对话框 / 按钮等框架色保留 `@android:color/system_*` 引用 |
 | 纯色底栏（SolidTab） | ✅ | |
-| 模糊底栏（BlurTab，预签名 RRO） | ✅ | `color/df` 与主底栏 `color/bb` 直接引用系统 Monet 亮/暗表面，重启后仍可注册 |
+| 模糊底栏（BlurTab，预签名 RRO） | ✅ | 3182 将旧 `df` / `bb` 分别映射为 `mi` / `ja`，引用系统 Monet 亮/暗表面 |
 | 普通文本会话气泡 Monet 取色 | ✅ | 接收气泡使用 Monet 表面容器色，发送气泡使用 Monet 主色容器色；日/夜均跟随壁纸，使用无尾圆角矩形并保留文字内边距 |
 | 多场景圆角（输入栏 / 支付键盘） | ✅ | 消息引用表面色暂缺 |
-| 关于页文案注入 | ✅ | 已适配为大陆版信息 |
+| 关于页文案注入 | 旧版支持 | 3182 暂不覆盖 6 个尚未核对的新字符串槽位 |
 | 红点与红色强调槽位（预签名 RRO） | ✅ 部分 | `color/ac`、`Red_100` 引用系统 Monet 主色，覆盖使用这两个槽位的资源型红点和少量共用红色控件；预编译 SVG 红点及使用其他槽位的底栏选中项仍保留微信原色 |
 | Play 气泡样式选择（现代圆角 / Pro / 经典） | ❌ | 大陆版为图片气泡架构，保留自身形状，仅替换普通文本气泡颜色 |
 | 红包 / 转账 / 链接气泡变色 | ❌ | 蒙版资源在大陆版无对应，保持微信原色 |
@@ -45,6 +45,7 @@
 | 8.0.76 | 3140 | 真机适配 + lookup 全量验证 | ✅ 基准版本 |
 | 8.0.76 热修 | 3141 | 与 3140 对比：2160 颜色值、13843 资源文件逐字节零差异 | ✅ 无需改动 |
 | 8.0.77 | 3160 | 资源名洗牌（删 480/增 1172），本模块条目零丢失；逐值 diff 仅 10 处夜间深灰微调 | ✅ 无需改动 |
+| 8.0.79 | 3182 | CN12 重新比对实际 3160 基线：基础 229、红点 2、气泡 10、圆角 2、纯色底栏 1、模糊底栏 2 个目标条目；真机重启后核对挂载哈希与映射，抽查首页和文件传输助手的明暗模式 | 已通过上述范围的真机验证 |
 
 ## 常用命令
 
@@ -58,11 +59,29 @@ adb shell cmd overlay dump monet.com.tencent.mm
 # 验证某个槽位当前取值（如主文字色）
 adb shell cmd overlay lookup com.tencent.mm com.tencent.mm:color/BW_0_Alpha_0_9
 
-# 回滚：停用模块，或执行
-adb shell cmd overlay disable --user 0 monet.com.tencent.mm monet.chatbubble.com.tencent.mm monet.multiscenecorners.com.tencent.mm monet.solidtab.com.tencent.mm monet.blurtab.com.tencent.mm monet.badge.com.tencent.mm monet.bubblepro.com.tencent.mm monet.classicbubble.com.tencent.mm
+# 回滚：在 KernelSU / Magisk 中停用模块后重启。
+# 静态 RRO 不能通过 cmd overlay disable 或 adb install -r 热替换。
 ```
 
 适配工作区根目录的 `rerun_pipeline.sh` 会先生成并校验 patched APK，再签名（脚本不随模块 ZIP 发布）；签名器若找不到 `zipalign`，请传入 `--zipalign PATH`。只有确认可以接受未对齐 APK 时才使用 `--skip-zipalign`，流水线不会自动静默降级。
+
+### 按已审核映射一键生成
+
+项目内适配器按 `compat/3182.json` 的完整映射构建。换到尚无映射的新微信版本时，需要先核对资源语义；工具不会自动猜测同名混淆资源的用途。
+
+依赖 Python、`androguard`（当前验证版本 4.1.4）、Java 和签名器。签名器默认位于项目上级 `tools/uber-apk-signer.jar`，也可用 `--signer PATH` 指定：
+
+```powershell
+python .\adapt_wechat.py --wx-apk .\Workspace\compat-3182\target\base.apk --apply
+```
+
+脚本校验目标 APK 和全部源 APK 的 SHA256、版本号和资源表。每个源条目必须明确映射或归为内部资源；未核对条目改为私有名称，避免误命中新版同名资源。它按资源类型逐项改名，保持内部资源 ID 和引用不变，签名后生成 6 个 `files/*-3182.apk`。`--apply` 缺少签名器时会停止。
+
+映射证据位于 `compat/3182-audit.json`，真机检查范围见 `compat/3182-validation.md`。安装器在 3182 缺少对应版本 APK 时会报错；旧版微信仍使用原来的 APK。生成模块 ZIP：
+
+```powershell
+python .\build_module.py
+```
 
 ## 工作原理
 
@@ -74,7 +93,8 @@ adb shell cmd overlay disable --user 0 monet.com.tencent.mm monet.chatbubble.com
 - 约 28 个颜色为 `?attr` 主题属性引用，无法从 shell 取值，保持微信原色。
 - 文字类槽位不取色（避免文字染色），整体是「背景彩、文字不彩」的半 Monet 观感。
 - 微信 8.0.77 默认启用预编译 SVG（`SVGBuildConfig.WxSVGCode=true`）。这类红点由 `com.tencent.mm.boot.svg.code.drawable.*` 直接绘制并含硬编码颜色，RRO 无法覆盖；本模块通过 `color/ac` 与 `Red_100` 稳定覆盖资源型红点及少量共用红色控件。使用其他颜色槽位的底栏选中项不会因此变色。全量动态红点需要修改微信 DEX 或使用运行时 Hook，本模块不做这两类改动。
-- 本模块仅针对上述 versionCode 验证；微信更新到未适配版本后，开机会自动停用旧覆盖，避免资源名洗牌造成错误取色，请等待新版本发布。
+- 3182 基础包有 49 个内部或尚未核对的条目，不参与目标匹配；其中含 6 个关于页字符串。圆角包的 2 个内部颜色仍供包内 XML 引用。
+- 本模块仅针对上述 versionCode 验证；微信更新到未适配版本后需要重新审核完整映射并做真机验证。静态 RRO 的启停由系统开机扫描决定，回滚应停用模块后重启。
 
 ## 致谢与声明
 

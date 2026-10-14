@@ -1,3 +1,5 @@
 .mimosa/
 *.idsig
 Workspace/
+__pycache__/
+*.pyc

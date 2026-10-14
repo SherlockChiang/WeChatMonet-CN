@@ -70,6 +70,8 @@ until [ "$(getprop sys.boot_completed)" = "1" ]; do
 done
 
 version_code=$(dumpsys package "$TARGET_PACKAGE" 2>/dev/null | sed -n 's/.*versionCode=\([0-9][0-9]*\).*/\1/p' | head -n 1)
+WECHAT_VERSION_CODE="$version_code"
+export WECHAT_VERSION_CODE
 if ! is_supported_wechat_version "$version_code"; then
   echo "! 当前微信版本不受支持（versionCode=${version_code:-未知}），停用旧覆盖配置。"
   for user_id in $(list_target_users); do
