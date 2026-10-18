@@ -1,6 +1,8 @@
 {
   "schemaVersion": 2,
   "versionCode": 3182,
+  "channel": "Play",
+  "targetBuildTag": "Android_Wechat_RELEASE_GP_AppBundle",
   "versionName": "8.0.79",
   "baselineVersionCode": 3160,
   "targetSha256": "4382254fbb256f37b7b430e6f3d984c512c603e46d39f9c323cd8a6fa75d8364",

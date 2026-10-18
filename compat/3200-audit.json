@@ -1,0 +1,6187 @@
+{
+  "baselineVersionCode": 3160,
+  "baselineSha256": "18714afe662d2ca58e8e9389ad727c9ff562ed8f3711a93c904819bb753215d2",
+  "targetVersionCode": 3200,
+  "channel": "CN",
+  "targetSha256": "f2a725bc04302ad218a563533ae79356e66b64aa711b275bc919a8d432f7e15d",
+  "method": "Content and XML reference comparison with CN 3160. No short-name or resource-ID identity assumption. Ambiguous entries are private.",
+  "overlays": {
+    "MonetWeChat": [
+      {
+        "source": "color/BW_0_Alpha_0_9_Night_Mode",
+        "target": "color/BW_0_Alpha_0_9_Night_Mode",
+        "evidence": [
+          [
+            "color/BW_0_Alpha_0_9_Night_Mode",
+            "descriptive-name"
+          ],
+          [
+            "color/BW_0_Alpha_0_9_Night_Mode",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/BW_0_Alpha_0_9_Night_Mode",
+            "xml-slot-votes:10/10"
+          ],
+          [
+            "color/BW_0_Alpha_0_9_Night_Mode",
+            "xml-slot-votes:13/13"
+          ],
+          [
+            "color/BW_0_Alpha_0_9_Night_Mode",
+            "xml-slot-votes:13/13"
+          ],
+          [
+            "color/BW_0_Alpha_0_9_Night_Mode",
+            "ordered-content-block:32"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/BW_0_Alpha_0_9_Night_Mode",
+            13
+          ]
+        ]
+      },
+      {
+        "source": "color/BW_0_Alpha_0_9_White_Mode",
+        "target": "color/BW_0_Alpha_0_9_White_Mode",
+        "evidence": [
+          [
+            "color/BW_0_Alpha_0_9_White_Mode",
+            "descriptive-name"
+          ],
+          [
+            "color/BW_0_Alpha_0_9_White_Mode",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/BW_0_Alpha_0_9_White_Mode",
+            "ordered-content-block:32"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/BW_0_Alpha_0_9_night_mode",
+        "target": "color/BW_0_Alpha_0_9_night_mode",
+        "evidence": [
+          [
+            "color/BW_0_Alpha_0_9_night_mode",
+            "descriptive-name"
+          ],
+          [
+            "color/BW_0_Alpha_0_9_night_mode",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/BW_0_Alpha_0_9_night_mode",
+            "xml-slot-votes:5/5"
+          ],
+          [
+            "color/BW_0_Alpha_0_9_night_mode",
+            "xml-slot-votes:5/5"
+          ],
+          [
+            "color/BW_0_Alpha_0_9_night_mode",
+            "xml-slot-votes:5/5"
+          ],
+          [
+            "color/BW_0_Alpha_0_9_night_mode",
+            "ordered-content-block:32"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/BW_0_Alpha_0_9_night_mode",
+            5
+          ]
+        ]
+      },
+      {
+        "source": "color/BW_100",
+        "target": "color/BW_100",
+        "evidence": [
+          [
+            "color/BW_100",
+            "descriptive-name"
+          ],
+          [
+            "color/BW_100",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/BW_100",
+            "xml-slot-votes:40/40"
+          ],
+          [
+            "color/BW_100",
+            "xml-slot-votes:49/49"
+          ],
+          [
+            "color/BW_100",
+            "xml-slot-votes:49/49"
+          ],
+          [
+            "color/BW_100",
+            "ordered-content-block:32"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/BW_100",
+            49
+          ]
+        ]
+      },
+      {
+        "source": "color/BW_30_Alpha_0_9",
+        "target": "color/BW_30_Alpha_0_9",
+        "evidence": [
+          [
+            "color/BW_30_Alpha_0_9",
+            "descriptive-name"
+          ],
+          [
+            "color/BW_30_Alpha_0_9",
+            "unique-color-value"
+          ],
+          [
+            "color/BW_30_Alpha_0_9",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/BW_30_Alpha_0_9",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/BW_30_Alpha_0_9",
+            "xml-slot-votes:3/3"
+          ],
+          [
+            "color/BW_30_Alpha_0_9",
+            "xml-slot-votes:3/3"
+          ],
+          [
+            "color/BW_30_Alpha_0_9",
+            "ordered-content-block:32"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/BW_30_Alpha_0_9",
+            3
+          ]
+        ]
+      },
+      {
+        "source": "color/BW_85",
+        "target": "color/BW_85",
+        "evidence": [
+          [
+            "color/BW_85",
+            "descriptive-name"
+          ],
+          [
+            "color/BW_85",
+            "unique-color-value"
+          ],
+          [
+            "color/BW_85",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/BW_85",
+            "xml-slot-votes:3/3"
+          ],
+          [
+            "color/BW_85",
+            "xml-slot-votes:3/3"
+          ],
+          [
+            "color/BW_85",
+            "ordered-content-block:8"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/BW_85",
+            3
+          ]
+        ]
+      },
+      {
+        "source": "color/BW_90",
+        "target": "color/BW_90",
+        "evidence": [
+          [
+            "color/BW_90",
+            "descriptive-name"
+          ],
+          [
+            "color/BW_90",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/BW_90",
+            "xml-slot-votes:44/44"
+          ],
+          [
+            "color/BW_90",
+            "xml-slot-votes:52/52"
+          ],
+          [
+            "color/BW_90",
+            "xml-slot-votes:52/52"
+          ],
+          [
+            "color/BW_90",
+            "ordered-content-block:8"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/BW_90",
+            52
+          ]
+        ]
+      },
+      {
+        "source": "color/BW_93",
+        "target": "color/BW_93",
+        "evidence": [
+          [
+            "color/BW_93",
+            "descriptive-name"
+          ],
+          [
+            "color/BW_93",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/BW_93",
+            "xml-slot-votes:120/120"
+          ],
+          [
+            "color/BW_93",
+            "xml-slot-votes:135/135"
+          ],
+          [
+            "color/BW_93",
+            "xml-slot-votes:135/135"
+          ],
+          [
+            "color/BW_93",
+            "ordered-content-block:67"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/BW_93",
+            135
+          ]
+        ]
+      },
+      {
+        "source": "color/BW_93_Night_Mode",
+        "target": "color/BW_93_Night_Mode",
+        "evidence": [
+          [
+            "color/BW_93_Night_Mode",
+            "descriptive-name"
+          ],
+          [
+            "color/BW_93_Night_Mode",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/BW_93_Night_Mode",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/BW_93_Night_Mode",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/BW_93_Night_Mode",
+            "ordered-content-block:67"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/BW_93_Night_Mode",
+            2
+          ]
+        ]
+      },
+      {
+        "source": "color/BW_97",
+        "target": "color/BW_97",
+        "evidence": [
+          [
+            "color/BW_97",
+            "descriptive-name"
+          ],
+          [
+            "color/BW_97",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/BW_97",
+            "xml-slot-votes:43/43"
+          ],
+          [
+            "color/BW_97",
+            "xml-slot-votes:58/58"
+          ],
+          [
+            "color/BW_97",
+            "xml-slot-votes:58/58"
+          ],
+          [
+            "color/BW_97",
+            "ordered-content-block:67"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/BW_97",
+            58
+          ]
+        ]
+      },
+      {
+        "source": "color/BW_BG_100",
+        "target": "color/BW_BG_100",
+        "evidence": [
+          [
+            "color/BW_BG_100",
+            "descriptive-name"
+          ],
+          [
+            "color/BW_BG_100",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/BW_BG_100",
+            "xml-slot-votes:28/28"
+          ],
+          [
+            "color/BW_BG_100",
+            "xml-slot-votes:33/33"
+          ],
+          [
+            "color/BW_BG_100",
+            "xml-slot-votes:33/33"
+          ],
+          [
+            "color/BW_BG_100",
+            "ordered-content-block:67"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/BW_BG_100",
+            33
+          ]
+        ]
+      },
+      {
+        "source": "color/BW_BG_19",
+        "target": "color/BW_BG_19",
+        "evidence": [
+          [
+            "color/BW_BG_19",
+            "descriptive-name"
+          ],
+          [
+            "color/BW_BG_19",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/BW_BG_19",
+            "xml-slot-votes:4/4"
+          ],
+          [
+            "color/BW_BG_19",
+            "xml-slot-votes:4/4"
+          ],
+          [
+            "color/BW_BG_19",
+            "xml-slot-votes:4/4"
+          ],
+          [
+            "color/BW_BG_19",
+            "ordered-content-block:67"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/BW_BG_19",
+            4
+          ]
+        ]
+      },
+      {
+        "source": "color/BW_BG_20",
+        "target": "color/BW_BG_20",
+        "evidence": [
+          [
+            "color/BW_BG_20",
+            "descriptive-name"
+          ],
+          [
+            "color/BW_BG_20",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/BW_BG_20",
+            "xml-slot-votes:5/5"
+          ],
+          [
+            "color/BW_BG_20",
+            "xml-slot-votes:7/7"
+          ],
+          [
+            "color/BW_BG_20",
+            "xml-slot-votes:7/7"
+          ],
+          [
+            "color/BW_BG_20",
+            "ordered-content-block:67"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/BW_BG_20",
+            7
+          ]
+        ]
+      },
+      {
+        "source": "color/BW_BG_30",
+        "target": "color/BW_BG_30",
+        "evidence": [
+          [
+            "color/BW_BG_30",
+            "descriptive-name"
+          ],
+          [
+            "color/BW_BG_30",
+            "unique-color-value"
+          ],
+          [
+            "color/BW_BG_30",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/BW_BG_30",
+            "xml-slot-votes:3/3"
+          ],
+          [
+            "color/BW_BG_30",
+            "xml-slot-votes:10/10"
+          ],
+          [
+            "color/BW_BG_30",
+            "xml-slot-votes:10/10"
+          ],
+          [
+            "color/BW_BG_30",
+            "ordered-content-block:67"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/BW_BG_30",
+            10
+          ]
+        ]
+      },
+      {
+        "source": "color/BW_BG_95",
+        "target": "color/BW_BG_95",
+        "evidence": [
+          [
+            "color/BW_BG_95",
+            "descriptive-name"
+          ],
+          [
+            "color/BW_BG_95",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/BW_BG_95",
+            "xml-slot-votes:3/3"
+          ],
+          [
+            "color/BW_BG_95",
+            "xml-slot-votes:4/4"
+          ],
+          [
+            "color/BW_BG_95",
+            "xml-slot-votes:4/4"
+          ],
+          [
+            "color/BW_BG_95",
+            "ordered-content-block:67"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/BW_BG_95",
+            4
+          ]
+        ]
+      },
+      {
+        "source": "color/BW_BG_98",
+        "target": "color/BW_BG_98",
+        "evidence": [
+          [
+            "color/BW_BG_98",
+            "descriptive-name"
+          ],
+          [
+            "color/BW_BG_98",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/BW_BG_98",
+            "ordered-content-block:67"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/Brand_100",
+        "target": "color/Brand_100",
+        "evidence": [
+          [
+            "color/Brand_100",
+            "descriptive-name"
+          ],
+          [
+            "color/Brand_100",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/Brand_100",
+            "xml-slot-votes:76/76"
+          ],
+          [
+            "color/Brand_100",
+            "xml-slot-votes:81/81"
+          ],
+          [
+            "color/Brand_100",
+            "xml-slot-votes:81/81"
+          ],
+          [
+            "color/Brand_100",
+            "ordered-content-block:67"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/Brand_100",
+            81
+          ]
+        ]
+      },
+      {
+        "source": "color/Brand_100_CARE",
+        "target": "color/Brand_100_CARE",
+        "evidence": [
+          [
+            "color/Brand_100_CARE",
+            "descriptive-name"
+          ],
+          [
+            "color/Brand_100_CARE",
+            "unique-color-value"
+          ],
+          [
+            "color/Brand_100_CARE",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/Brand_100_CARE",
+            "xml-slot-votes:5/5"
+          ],
+          [
+            "color/Brand_100_CARE",
+            "xml-slot-votes:5/5"
+          ],
+          [
+            "color/Brand_100_CARE",
+            "ordered-content-block:67"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/Brand_100_CARE",
+            5
+          ]
+        ]
+      },
+      {
+        "source": "color/Brand_120",
+        "target": "color/Brand_120",
+        "evidence": [
+          [
+            "color/Brand_120",
+            "descriptive-name"
+          ],
+          [
+            "color/Brand_120",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/Brand_120",
+            "ordered-content-block:67"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/Brand_120_CARE",
+        "target": "color/Brand_120_CARE",
+        "evidence": [
+          [
+            "color/Brand_120_CARE",
+            "descriptive-name"
+          ],
+          [
+            "color/Brand_120_CARE",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/Brand_120_CARE",
+            "ordered-content-block:67"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/Brand_170",
+        "target": "color/Brand_170",
+        "evidence": [
+          [
+            "color/Brand_170",
+            "descriptive-name"
+          ],
+          [
+            "color/Brand_170",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/Brand_170",
+            "ordered-content-block:67"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/Brand_170",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/Brand_170_CARE",
+        "target": "color/Brand_170_CARE",
+        "evidence": [
+          [
+            "color/Brand_170_CARE",
+            "descriptive-name"
+          ],
+          [
+            "color/Brand_170_CARE",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/Brand_170_CARE",
+            "ordered-content-block:67"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/Brand_80",
+        "target": "color/Brand_80",
+        "evidence": [
+          [
+            "color/Brand_80",
+            "descriptive-name"
+          ],
+          [
+            "color/Brand_80",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/Brand_80",
+            "xml-slot-votes:3/3"
+          ],
+          [
+            "color/Brand_80",
+            "xml-slot-votes:3/3"
+          ],
+          [
+            "color/Brand_80",
+            "xml-slot-votes:3/3"
+          ],
+          [
+            "color/Brand_80",
+            "ordered-content-block:67"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/Brand_80",
+            3
+          ]
+        ]
+      },
+      {
+        "source": "color/Brand_80_CARE",
+        "target": "color/Brand_80_CARE",
+        "evidence": [
+          [
+            "color/Brand_80_CARE",
+            "descriptive-name"
+          ],
+          [
+            "color/Brand_80_CARE",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/Brand_80_CARE",
+            "ordered-content-block:67"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/Brand_90",
+        "target": "color/Brand_90",
+        "evidence": [
+          [
+            "color/Brand_90",
+            "descriptive-name"
+          ],
+          [
+            "color/Brand_90",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/Brand_90",
+            "xml-slot-votes:5/5"
+          ],
+          [
+            "color/Brand_90",
+            "xml-slot-votes:9/9"
+          ],
+          [
+            "color/Brand_90",
+            "xml-slot-votes:9/9"
+          ],
+          [
+            "color/Brand_90",
+            "ordered-content-block:67"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/Brand_90",
+            9
+          ]
+        ]
+      },
+      {
+        "source": "color/Brand_90_CARE",
+        "target": "color/Brand_90_CARE",
+        "evidence": [
+          [
+            "color/Brand_90_CARE",
+            "descriptive-name"
+          ],
+          [
+            "color/Brand_90_CARE",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/Brand_90_CARE",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/Brand_90_CARE",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/Brand_90_CARE",
+            "ordered-content-block:67"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/Brand_90_CARE",
+            2
+          ]
+        ]
+      },
+      {
+        "source": "color/Brand_BG_100",
+        "target": "color/Brand_BG_100",
+        "evidence": [
+          [
+            "color/Brand_BG_100",
+            "descriptive-name"
+          ],
+          [
+            "color/Brand_BG_100",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/Brand_BG_100",
+            "ordered-content-block:67"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/Brand_BG_100",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/Brand_BG_100_CARE",
+        "target": "color/Brand_BG_100_CARE",
+        "evidence": [
+          [
+            "color/Brand_BG_100_CARE",
+            "descriptive-name"
+          ],
+          [
+            "color/Brand_BG_100_CARE",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/Brand_BG_100_CARE",
+            "ordered-content-block:67"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/Brand_BG_100_CARE",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/Brand_BG_110",
+        "target": "color/Brand_BG_110",
+        "evidence": [
+          [
+            "color/Brand_BG_110",
+            "descriptive-name"
+          ],
+          [
+            "color/Brand_BG_110",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/Brand_BG_110",
+            "ordered-content-block:67"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/Brand_BG_110",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/Brand_BG_110_CARE",
+        "target": "color/Brand_BG_110_CARE",
+        "evidence": [
+          [
+            "color/Brand_BG_110_CARE",
+            "descriptive-name"
+          ],
+          [
+            "color/Brand_BG_110_CARE",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/Brand_BG_110_CARE",
+            "ordered-content-block:67"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/Brand_BG_130",
+        "target": "color/Brand_BG_130",
+        "evidence": [
+          [
+            "color/Brand_BG_130",
+            "descriptive-name"
+          ],
+          [
+            "color/Brand_BG_130",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/Brand_BG_130",
+            "ordered-content-block:67"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/Brand_BG_130_CARE",
+        "target": "color/Brand_BG_130_CARE",
+        "evidence": [
+          [
+            "color/Brand_BG_130_CARE",
+            "descriptive-name"
+          ],
+          [
+            "color/Brand_BG_130_CARE",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/Brand_BG_130_CARE",
+            "ordered-content-block:67"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/Brand_BG_90",
+        "target": "color/Brand_BG_90",
+        "evidence": [
+          [
+            "color/Brand_BG_90",
+            "descriptive-name"
+          ],
+          [
+            "color/Brand_BG_90",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/Brand_BG_90",
+            "ordered-content-block:67"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/Brand_BG_90_CARE",
+        "target": "color/Brand_BG_90_CARE",
+        "evidence": [
+          [
+            "color/Brand_BG_90_CARE",
+            "descriptive-name"
+          ],
+          [
+            "color/Brand_BG_90_CARE",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/Brand_BG_90_CARE",
+            "ordered-content-block:67"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/LightGreen_100",
+        "target": "color/LightGreen_100",
+        "evidence": [
+          [
+            "color/LightGreen_100",
+            "descriptive-name"
+          ],
+          [
+            "color/LightGreen_100",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/LightGreen_100",
+            "ordered-content-block:134"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/LightGreen_100",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/LightGreen_100_CARE",
+        "target": "color/LightGreen_100_CARE",
+        "evidence": [
+          [
+            "color/LightGreen_100_CARE",
+            "descriptive-name"
+          ],
+          [
+            "color/LightGreen_100_CARE",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/LightGreen_100_CARE",
+            "ordered-content-block:134"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/LinkFinder_100",
+        "target": "color/LinkFinder_100",
+        "evidence": [
+          [
+            "color/LinkFinder_100",
+            "descriptive-name"
+          ],
+          [
+            "color/LinkFinder_100",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/LinkFinder_100",
+            "xml-slot-votes:11/11"
+          ],
+          [
+            "color/LinkFinder_100",
+            "xml-slot-votes:11/11"
+          ],
+          [
+            "color/LinkFinder_100",
+            "xml-slot-votes:11/11"
+          ],
+          [
+            "color/LinkFinder_100",
+            "ordered-content-block:134"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/LinkFinder_100",
+            11
+          ]
+        ]
+      },
+      {
+        "source": "color/LinkFinder_100_CARE",
+        "target": "color/LinkFinder_100_CARE",
+        "evidence": [
+          [
+            "color/LinkFinder_100_CARE",
+            "descriptive-name"
+          ],
+          [
+            "color/LinkFinder_100_CARE",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/LinkFinder_100_CARE",
+            "ordered-content-block:134"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/Link_100",
+        "target": "color/Link_100",
+        "evidence": [
+          [
+            "color/Link_100",
+            "descriptive-name"
+          ],
+          [
+            "color/Link_100",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/Link_100",
+            "xml-slot-votes:193/195"
+          ],
+          [
+            "color/Link_100",
+            "xml-slot-votes:196/198"
+          ],
+          [
+            "color/Link_100",
+            "xml-slot-votes:196/198"
+          ],
+          [
+            "color/Link_100",
+            "ordered-content-block:134"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/Link_100",
+            196
+          ],
+          [
+            "color/Link_120",
+            2
+          ]
+        ]
+      },
+      {
+        "source": "color/Link_100_CARE",
+        "target": "color/Link_100_CARE",
+        "evidence": [
+          [
+            "color/Link_100_CARE",
+            "descriptive-name"
+          ],
+          [
+            "color/Link_100_CARE",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/Link_100_CARE",
+            "ordered-content-block:134"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/Red_100",
+        "target": "color/Red_100",
+        "evidence": [
+          [
+            "color/Red_100",
+            "descriptive-name"
+          ],
+          [
+            "color/Red_100",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/Red_100",
+            "xml-slot-votes:29/29"
+          ],
+          [
+            "color/Red_100",
+            "xml-slot-votes:30/30"
+          ],
+          [
+            "color/Red_100",
+            "xml-slot-votes:30/30"
+          ],
+          [
+            "color/Red_100",
+            "ordered-content-block:134"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/Red_100",
+            30
+          ]
+        ]
+      },
+      {
+        "source": "color/Red_90",
+        "target": "color/Red_90",
+        "evidence": [
+          [
+            "color/Red_90",
+            "descriptive-name"
+          ],
+          [
+            "color/Red_90",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/Red_90",
+            "xml-slot-votes:4/4"
+          ],
+          [
+            "color/Red_90",
+            "xml-slot-votes:4/4"
+          ],
+          [
+            "color/Red_90",
+            "xml-slot-votes:4/4"
+          ],
+          [
+            "color/Red_90",
+            "ordered-content-block:134"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/Red_90",
+            4
+          ]
+        ]
+      },
+      {
+        "source": "color/Red_90_CARE",
+        "target": "color/Red_90_CARE",
+        "evidence": [
+          [
+            "color/Red_90_CARE",
+            "descriptive-name"
+          ],
+          [
+            "color/Red_90_CARE",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/Red_90_CARE",
+            "ordered-content-block:134"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/UN_BW_100_Alpha_0_8",
+        "target": "color/UN_BW_100_Alpha_0_8",
+        "evidence": [
+          [
+            "color/UN_BW_100_Alpha_0_8",
+            "descriptive-name"
+          ],
+          [
+            "color/UN_BW_100_Alpha_0_8",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/UN_BW_100_Alpha_0_8",
+            "xml-slot-votes:39/39"
+          ],
+          [
+            "color/UN_BW_100_Alpha_0_8",
+            "xml-slot-votes:39/39"
+          ],
+          [
+            "color/UN_BW_100_Alpha_0_8",
+            "xml-slot-votes:39/39"
+          ],
+          [
+            "color/UN_BW_100_Alpha_0_8",
+            "ordered-content-block:45"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/UN_BW_100_Alpha_0_8",
+            39
+          ]
+        ]
+      },
+      {
+        "source": "color/UN_BW_93",
+        "target": "color/UN_BW_93",
+        "evidence": [
+          [
+            "color/UN_BW_93",
+            "descriptive-name"
+          ],
+          [
+            "color/UN_BW_93",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/UN_BW_93",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/UN_BW_93",
+            "xml-slot-votes:5/5"
+          ],
+          [
+            "color/UN_BW_93",
+            "xml-slot-votes:5/5"
+          ],
+          [
+            "color/UN_BW_93",
+            "ordered-content-block:45"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/UN_BW_93",
+            5
+          ]
+        ]
+      },
+      {
+        "source": "color/Yellow_BG_100",
+        "target": "color/Yellow_BG_100",
+        "evidence": [
+          [
+            "color/Yellow_BG_100",
+            "descriptive-name"
+          ],
+          [
+            "color/Yellow_BG_100",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/Yellow_BG_100",
+            "ordered-content-block:133"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/Yellow_BG_100_CARE",
+        "target": "color/Yellow_BG_100_CARE",
+        "evidence": [
+          [
+            "color/Yellow_BG_100_CARE",
+            "descriptive-name"
+          ],
+          [
+            "color/Yellow_BG_100_CARE",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/Yellow_BG_100_CARE",
+            "ordered-content-block:133"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/a",
+        "target": "color/a",
+        "evidence": [
+          [
+            "color/a",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a",
+            "xml-slot-votes:274/274"
+          ],
+          [
+            "color/a",
+            "xml-slot-votes:299/299"
+          ],
+          [
+            "color/a",
+            "xml-slot-votes:299/299"
+          ],
+          [
+            "color/a",
+            "ordered-content-block:18"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/a",
+            299
+          ]
+        ]
+      },
+      {
+        "source": "color/a0p",
+        "target": "color/a0p",
+        "evidence": [
+          [
+            "color/a0p",
+            "unique-color-value"
+          ],
+          [
+            "color/a0p",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a0p",
+            "ordered-content-block:64"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/a0q",
+        "target": "color/a0q",
+        "evidence": [
+          [
+            "color/a0q",
+            "unique-color-value"
+          ],
+          [
+            "color/a0q",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a0q",
+            "ordered-content-block:64"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/a1g",
+        "target": "color/a1g",
+        "evidence": [
+          [
+            "color/a1g",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a1g",
+            "ordered-content-block:64"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/a1g",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/a1o",
+        "target": "color/a1o",
+        "evidence": [
+          [
+            "color/a1o",
+            "unique-color-value"
+          ],
+          [
+            "color/a1o",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a1o",
+            "ordered-content-block:64"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/a1p",
+        "target": "color/a1p",
+        "evidence": [
+          [
+            "color/a1p",
+            "unique-color-value"
+          ],
+          [
+            "color/a1p",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a1p",
+            "ordered-content-block:64"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/a1p",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/a1x",
+        "target": "color/a1x",
+        "evidence": [
+          [
+            "color/a1x",
+            "unique-color-value"
+          ],
+          [
+            "color/a1x",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a1x",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/a21",
+        "target": "color/a21",
+        "evidence": [
+          [
+            "color/a21",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a21",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/a21",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/a24",
+        "target": "color/a24",
+        "evidence": [
+          [
+            "color/a24",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a24",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/a25",
+        "target": "color/a25",
+        "evidence": [
+          [
+            "color/a25",
+            "unique-color-value"
+          ],
+          [
+            "color/a25",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a25",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/a25",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/a28",
+        "target": "color/a28",
+        "evidence": [
+          [
+            "color/a28",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a28",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/a28",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/a28",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/a28",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/a28",
+            2
+          ]
+        ]
+      },
+      {
+        "source": "color/a29",
+        "target": "color/a29",
+        "evidence": [
+          [
+            "color/a29",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a29",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/a29",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/a2f",
+        "target": "color/a2f",
+        "evidence": [
+          [
+            "color/a2f",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a2f",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/a2f",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/a2g",
+        "target": "color/a2g",
+        "evidence": [
+          [
+            "color/a2g",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a2g",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/a2g",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/a2n",
+        "target": "color/a2n",
+        "evidence": [
+          [
+            "color/a2n",
+            "unique-color-value"
+          ],
+          [
+            "color/a2n",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a2n",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/a2o",
+        "target": "color/a2o",
+        "evidence": [
+          [
+            "color/a2o",
+            "unique-color-value"
+          ],
+          [
+            "color/a2o",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a2o",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/a2p",
+        "target": "color/a2p",
+        "evidence": [
+          [
+            "color/a2p",
+            "unique-color-value"
+          ],
+          [
+            "color/a2p",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a2p",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/a2r",
+        "target": "color/a2r",
+        "evidence": [
+          [
+            "color/a2r",
+            "unique-color-value"
+          ],
+          [
+            "color/a2r",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a2r",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/a2s",
+        "target": "color/a2s",
+        "evidence": [
+          [
+            "color/a2s",
+            "unique-color-value"
+          ],
+          [
+            "color/a2s",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a2s",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/a2u",
+        "target": "color/a2u",
+        "evidence": [
+          [
+            "color/a2u",
+            "unique-color-value"
+          ],
+          [
+            "color/a2u",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a2u",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/a2w",
+        "target": "color/a2w",
+        "evidence": [
+          [
+            "color/a2w",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a2w",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/a2w",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/a2x",
+        "target": "color/a2x",
+        "evidence": [
+          [
+            "color/a2x",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a2x",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/a32",
+        "target": "color/a32",
+        "evidence": [
+          [
+            "color/a32",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a32",
+            "xml-slot-votes:6/6"
+          ],
+          [
+            "color/a32",
+            "xml-with-mapped-refs"
+          ],
+          [
+            "color/a32",
+            "xml-slot-votes:6/6"
+          ],
+          [
+            "color/a32",
+            "xml-slot-votes:6/6"
+          ],
+          [
+            "color/a32",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/a32",
+            6
+          ]
+        ]
+      },
+      {
+        "source": "color/a36",
+        "target": "color/a36",
+        "evidence": [
+          [
+            "color/a36",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a36",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/a37",
+        "target": "color/a37",
+        "evidence": [
+          [
+            "color/a37",
+            "unique-color-value"
+          ],
+          [
+            "color/a37",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a37",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/a3a",
+        "target": "color/a3a",
+        "evidence": [
+          [
+            "color/a3a",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a3a",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/a40",
+        "target": "color/a40",
+        "evidence": [
+          [
+            "color/a40",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a40",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/a4v",
+        "target": "color/a4v",
+        "evidence": [
+          [
+            "color/a4v",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a4v",
+            "xml-with-mapped-refs"
+          ],
+          [
+            "color/a4v",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/a4z",
+        "target": "color/a4z",
+        "evidence": [
+          [
+            "color/a4z",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a4z",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/a67",
+        "target": "color/a67",
+        "evidence": [
+          [
+            "color/a67",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a67",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/a6c",
+        "target": "color/a6c",
+        "evidence": [
+          [
+            "color/a6c",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a6c",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/a6c",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/a6f",
+        "target": "color/a6f",
+        "evidence": [
+          [
+            "color/a6f",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a6f",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/a6f",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/a7a",
+        "target": "color/a7a",
+        "evidence": [
+          [
+            "color/a7a",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a7a",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/a7a",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/a7a",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/a7a",
+            2
+          ]
+        ]
+      },
+      {
+        "source": "color/a7f",
+        "target": "color/a7f",
+        "evidence": [
+          [
+            "color/a7f",
+            "unique-color-value"
+          ],
+          [
+            "color/a7f",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a7f",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/a7f",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/a7g",
+        "target": "color/a7g",
+        "evidence": [
+          [
+            "color/a7g",
+            "unique-color-value"
+          ],
+          [
+            "color/a7g",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a7g",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/a7g",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/a8b",
+        "target": "color/a8b",
+        "evidence": [
+          [
+            "color/a8b",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a8b",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/a8b",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/a8s",
+        "target": "color/a8s",
+        "evidence": [
+          [
+            "color/a8s",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a8s",
+            "xml-slot-votes:4/4"
+          ],
+          [
+            "color/a8s",
+            "xml-slot-votes:4/4"
+          ],
+          [
+            "color/a8s",
+            "xml-slot-votes:4/4"
+          ],
+          [
+            "color/a8s",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/a8s",
+            4
+          ]
+        ]
+      },
+      {
+        "source": "color/a8t",
+        "target": "color/a8t",
+        "evidence": [
+          [
+            "color/a8t",
+            "unique-color-value"
+          ],
+          [
+            "color/a8t",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a8t",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/a8w",
+        "target": "color/a8w",
+        "evidence": [
+          [
+            "color/a8w",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a8w",
+            "xml-slot-votes:8/8"
+          ],
+          [
+            "color/a8w",
+            "xml-slot-votes:8/8"
+          ],
+          [
+            "color/a8w",
+            "xml-slot-votes:8/8"
+          ],
+          [
+            "color/a8w",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/a8w",
+            8
+          ]
+        ]
+      },
+      {
+        "source": "color/a94",
+        "target": "color/a94",
+        "evidence": [
+          [
+            "color/a94",
+            "unique-color-value"
+          ],
+          [
+            "color/a94",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a94",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/a94",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/a_g",
+        "target": "color/a_g",
+        "evidence": [
+          [
+            "color/a_g",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a_g",
+            "ordered-content-block:8"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/a_l",
+        "target": "color/a_l",
+        "evidence": [
+          [
+            "color/a_l",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a_l",
+            "ordered-content-block:55"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/a_l",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/aa4",
+        "target": "color/aa4",
+        "evidence": [
+          [
+            "color/aa4",
+            "unique-color-value"
+          ],
+          [
+            "color/aa4",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/aa4",
+            "ordered-content-block:55"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/aab",
+        "target": "color/aab",
+        "evidence": [
+          [
+            "color/aab",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/aab",
+            "ordered-content-block:55"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/aab",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/aad",
+        "target": "color/aad",
+        "evidence": [
+          [
+            "color/aad",
+            "unique-color-value"
+          ],
+          [
+            "color/aad",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/aad",
+            "ordered-content-block:55"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/aad",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/aaq",
+        "target": "color/aaq",
+        "evidence": [
+          [
+            "color/aaq",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/aaq",
+            "xml-slot-votes:113/113"
+          ],
+          [
+            "color/aaq",
+            "xml-slot-votes:125/125"
+          ],
+          [
+            "color/aaq",
+            "xml-slot-votes:125/125"
+          ],
+          [
+            "color/aaq",
+            "ordered-content-block:55"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/aaq",
+            125
+          ]
+        ]
+      },
+      {
+        "source": "color/aav",
+        "target": "color/aav",
+        "evidence": [
+          [
+            "color/aav",
+            "unique-color-value"
+          ],
+          [
+            "color/aav",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/aav",
+            "ordered-content-block:30"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/aav",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/ab1",
+        "target": "color/ab1",
+        "evidence": [
+          [
+            "color/ab1",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/ab1",
+            "xml-slot-votes:5/5"
+          ],
+          [
+            "color/ab1",
+            "xml-slot-votes:5/5"
+          ],
+          [
+            "color/ab1",
+            "ordered-content-block:30"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/ab1",
+            5
+          ]
+        ]
+      },
+      {
+        "source": "color/abv",
+        "target": "color/abv",
+        "evidence": [
+          [
+            "color/abv",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/abv",
+            "ordered-content-block:20"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/ad9",
+        "target": "color/ad9",
+        "evidence": [
+          [
+            "color/ad9",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/ad9",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/aex",
+        "target": "color/aex",
+        "evidence": [
+          [
+            "color/aex",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/aex",
+            "xml-slot-votes:10/10"
+          ],
+          [
+            "color/aex",
+            "xml-slot-votes:10/10"
+          ],
+          [
+            "color/aex",
+            "xml-slot-votes:10/10"
+          ],
+          [
+            "color/aex",
+            "ordered-content-block:37"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/aex",
+            10
+          ]
+        ]
+      },
+      {
+        "source": "color/af2",
+        "target": "color/af2",
+        "evidence": [
+          [
+            "color/af2",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/af2",
+            "ordered-content-block:37"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/af6",
+        "target": "color/af6",
+        "evidence": [
+          [
+            "color/af6",
+            "unique-color-value"
+          ],
+          [
+            "color/af6",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/af6",
+            "ordered-content-block:99"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/af_",
+        "target": "color/af_",
+        "evidence": [
+          [
+            "color/af_",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/af_",
+            "xml-slot-votes:6/6"
+          ],
+          [
+            "color/af_",
+            "xml-slot-votes:6/6"
+          ],
+          [
+            "color/af_",
+            "xml-slot-votes:6/6"
+          ],
+          [
+            "color/af_",
+            "ordered-content-block:65"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/af_",
+            6
+          ]
+        ]
+      },
+      {
+        "source": "color/afc",
+        "target": "color/afc",
+        "evidence": [
+          [
+            "color/afc",
+            "unique-color-value"
+          ],
+          [
+            "color/afc",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/afc",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/ags",
+        "target": "color/agy",
+        "evidence": [
+          [
+            "color/agy",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/agy",
+            "ordered-content-block:58"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/ahf",
+        "target": "color/ahr",
+        "evidence": [
+          [
+            "color/ahr",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/ahr",
+            "xml-slot-votes:3/3"
+          ],
+          [
+            "color/ahr",
+            "xml-slot-votes:4/4"
+          ],
+          [
+            "color/ahr",
+            "xml-slot-votes:4/4"
+          ],
+          [
+            "color/ahr",
+            "ordered-content-block:21"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/ahr",
+            4
+          ]
+        ]
+      },
+      {
+        "source": "color/ahk",
+        "target": "color/ahw",
+        "evidence": [
+          [
+            "color/ahw",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/ahw",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/ahw",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/ahw",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/ahw",
+            "ordered-content-block:21"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/ahw",
+            2
+          ]
+        ]
+      },
+      {
+        "source": "color/ajh",
+        "target": null,
+        "disposition": "private: no unambiguous content or reference match",
+        "orderedCandidate": "color/ajz",
+        "block": 1
+      },
+      {
+        "source": "color/ajm",
+        "target": "color/ak8",
+        "evidence": [
+          [
+            "color/ak8",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/ak8",
+            "ordered-content-block:39"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/ak8",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/ak_",
+        "target": "color/al2",
+        "evidence": [
+          [
+            "color/al2",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/al2",
+            "ordered-content-block:37"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/al2",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/aki",
+        "target": "color/ald",
+        "evidence": [
+          [
+            "color/ald",
+            "unique-color-value"
+          ],
+          [
+            "color/ald",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/ald",
+            "ordered-content-block:99"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/akl",
+        "target": "color/alg",
+        "evidence": [
+          [
+            "color/alg",
+            "unique-color-value"
+          ],
+          [
+            "color/alg",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/alg",
+            "ordered-content-block:99"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/alg",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/akp",
+        "target": "color/alk",
+        "evidence": [
+          [
+            "color/alk",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/alk",
+            "ordered-content-block:99"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/alk",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/akt",
+        "target": "color/alo",
+        "evidence": [
+          [
+            "color/alo",
+            "unique-color-value"
+          ],
+          [
+            "color/alo",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/alo",
+            "ordered-content-block:99"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/alo",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/akw",
+        "target": "color/alr",
+        "evidence": [
+          [
+            "color/alr",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/alr",
+            "ordered-content-block:99"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/am3",
+        "target": "color/an4",
+        "evidence": [
+          [
+            "color/an4",
+            "unique-color-value"
+          ],
+          [
+            "color/an4",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/an4",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/an4",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/am5",
+        "target": "color/an6",
+        "evidence": [
+          [
+            "color/an6",
+            "unique-color-value"
+          ],
+          [
+            "color/an6",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/an6",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/amr",
+        "target": "color/ans",
+        "evidence": [
+          [
+            "color/ans",
+            "unique-color-value"
+          ],
+          [
+            "color/ans",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/ans",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/ans",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/an4",
+        "target": "color/ao5",
+        "evidence": [
+          [
+            "color/ao5",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/ao5",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/ao8",
+        "target": "color/apf",
+        "evidence": [
+          [
+            "color/apf",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/apf",
+            "ordered-content-block:8"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/b",
+        "target": "color/b",
+        "evidence": [
+          [
+            "color/b",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/b",
+            "xml-slot-votes:144/144"
+          ],
+          [
+            "color/b",
+            "xml-slot-votes:171/171"
+          ],
+          [
+            "color/b",
+            "xml-slot-votes:171/171"
+          ],
+          [
+            "color/b",
+            "ordered-content-block:18"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/b",
+            171
+          ]
+        ]
+      },
+      {
+        "source": "color/b_",
+        "target": "color/b_",
+        "evidence": [
+          [
+            "color/b_",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/b_",
+            "xml-with-mapped-refs"
+          ],
+          [
+            "color/b_",
+            "ordered-content-block:133"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/bb",
+        "target": "color/bb",
+        "evidence": [
+          [
+            "color/bb",
+            "file-hash"
+          ],
+          [
+            "color/bb",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/bb",
+            "unique-xml-structure"
+          ],
+          [
+            "color/bb",
+            "ordered-content-block:133"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/c",
+        "target": "color/c",
+        "evidence": [
+          [
+            "color/c",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/c",
+            "xml-slot-votes:321/321"
+          ],
+          [
+            "color/c",
+            "xml-slot-votes:386/386"
+          ],
+          [
+            "color/c",
+            "xml-slot-votes:386/386"
+          ],
+          [
+            "color/c",
+            "ordered-content-block:18"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/c",
+            386
+          ]
+        ]
+      },
+      {
+        "source": "color/d",
+        "target": "color/d",
+        "evidence": [
+          [
+            "color/d",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/d",
+            "xml-slot-votes:62/62"
+          ],
+          [
+            "color/d",
+            "xml-slot-votes:93/93"
+          ],
+          [
+            "color/d",
+            "xml-slot-votes:93/93"
+          ],
+          [
+            "color/d",
+            "ordered-content-block:18"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/d",
+            93
+          ]
+        ]
+      },
+      {
+        "source": "color/e",
+        "target": "color/e",
+        "evidence": [
+          [
+            "color/e",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/e",
+            "xml-slot-votes:13/13"
+          ],
+          [
+            "color/e",
+            "xml-slot-votes:15/15"
+          ],
+          [
+            "color/e",
+            "xml-slot-votes:15/15"
+          ],
+          [
+            "color/e",
+            "ordered-content-block:18"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/e",
+            15
+          ]
+        ]
+      },
+      {
+        "source": "color/f",
+        "target": "color/f",
+        "evidence": [
+          [
+            "color/f",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/f",
+            "xml-slot-votes:143/143"
+          ],
+          [
+            "color/f",
+            "xml-slot-votes:181/181"
+          ],
+          [
+            "color/f",
+            "xml-slot-votes:181/181"
+          ],
+          [
+            "color/f",
+            "ordered-content-block:18"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/f",
+            181
+          ]
+        ]
+      },
+      {
+        "source": "color/g",
+        "target": "color/g",
+        "evidence": [
+          [
+            "color/g",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/g",
+            "xml-slot-votes:9/9"
+          ],
+          [
+            "color/g",
+            "xml-slot-votes:10/10"
+          ],
+          [
+            "color/g",
+            "xml-slot-votes:10/10"
+          ],
+          [
+            "color/g",
+            "ordered-content-block:67"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/g",
+            10
+          ]
+        ]
+      },
+      {
+        "source": "color/h",
+        "target": "color/h",
+        "evidence": [
+          [
+            "color/h",
+            "unique-color-value"
+          ],
+          [
+            "color/h",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/h",
+            "ordered-content-block:67"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/h",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/i",
+        "target": "color/i",
+        "evidence": [
+          [
+            "color/i",
+            "unique-color-value"
+          ],
+          [
+            "color/i",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/i",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/i",
+            "xml-slot-votes:3/3"
+          ],
+          [
+            "color/i",
+            "xml-slot-votes:3/3"
+          ],
+          [
+            "color/i",
+            "ordered-content-block:67"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/i",
+            3
+          ]
+        ]
+      },
+      {
+        "source": "color/j",
+        "target": "color/agd",
+        "evidence": [
+          [
+            "color/agd",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/agd",
+            "ordered-content-block:20"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/jv",
+        "target": "color/jv",
+        "evidence": [
+          [
+            "color/jv",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/jv",
+            "ordered-content-block:41"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/jw",
+        "target": "color/jw",
+        "evidence": [
+          [
+            "color/jw",
+            "unique-color-value"
+          ],
+          [
+            "color/jw",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/jw",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/jw",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/jw",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/jw",
+            "ordered-content-block:41"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/jw",
+            2
+          ]
+        ]
+      },
+      {
+        "source": "color/jz",
+        "target": "color/jz",
+        "evidence": [
+          [
+            "color/jz",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/jz",
+            "ordered-content-block:41"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/jz",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/k",
+        "target": "color/k",
+        "evidence": [
+          [
+            "color/k",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/k",
+            "xml-slot-votes:6/6"
+          ],
+          [
+            "color/k",
+            "xml-slot-votes:6/6"
+          ],
+          [
+            "color/k",
+            "xml-slot-votes:6/6"
+          ],
+          [
+            "color/k",
+            "ordered-content-block:67"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/k",
+            6
+          ]
+        ]
+      },
+      {
+        "source": "color/k3",
+        "target": "color/k3",
+        "evidence": [
+          [
+            "color/k3",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/k3",
+            "xml-slot-votes:9/9"
+          ],
+          [
+            "color/k3",
+            "xml-slot-votes:11/11"
+          ],
+          [
+            "color/k3",
+            "xml-slot-votes:11/11"
+          ],
+          [
+            "color/k3",
+            "ordered-content-block:41"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/k3",
+            11
+          ]
+        ]
+      },
+      {
+        "source": "color/k4",
+        "target": "color/k4",
+        "evidence": [
+          [
+            "color/k4",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/k4",
+            "xml-slot-votes:4/4"
+          ],
+          [
+            "color/k4",
+            "xml-slot-votes:6/6"
+          ],
+          [
+            "color/k4",
+            "xml-slot-votes:6/6"
+          ],
+          [
+            "color/k4",
+            "ordered-content-block:41"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/k4",
+            6
+          ]
+        ]
+      },
+      {
+        "source": "color/k7",
+        "target": "color/k7",
+        "evidence": [
+          [
+            "color/k7",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/k7",
+            "xml-slot-votes:21/21"
+          ],
+          [
+            "color/k7",
+            "xml-slot-votes:21/21"
+          ],
+          [
+            "color/k7",
+            "xml-slot-votes:21/21"
+          ],
+          [
+            "color/k7",
+            "ordered-content-block:41"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/k7",
+            21
+          ]
+        ]
+      },
+      {
+        "source": "color/ke",
+        "target": "color/ke",
+        "evidence": [
+          [
+            "color/ke",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/ke",
+            "xml-with-mapped-refs"
+          ],
+          [
+            "color/ke",
+            "ordered-content-block:24"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/kf",
+        "target": "color/kf",
+        "evidence": [
+          [
+            "color/kf",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/kf",
+            "ordered-content-block:24"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/kg",
+        "target": "color/kg",
+        "evidence": [
+          [
+            "color/kg",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/kg",
+            "ordered-content-block:24"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/kg",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/kh",
+        "target": "color/kh",
+        "evidence": [
+          [
+            "color/kh",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/kh",
+            "ordered-content-block:24"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/kh",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/kj",
+        "target": "color/kj",
+        "evidence": [
+          [
+            "color/kj",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/kj",
+            "xml-slot-votes:16/16"
+          ],
+          [
+            "color/kj",
+            "xml-slot-votes:16/16"
+          ],
+          [
+            "color/kj",
+            "xml-slot-votes:16/16"
+          ],
+          [
+            "color/kj",
+            "ordered-content-block:134"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/kj",
+            16
+          ]
+        ]
+      },
+      {
+        "source": "color/kp",
+        "target": "color/kp",
+        "evidence": [
+          [
+            "color/kp",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/kp",
+            "xml-slot-votes:3/3"
+          ],
+          [
+            "color/kp",
+            "xml-slot-votes:3/3"
+          ],
+          [
+            "color/kp",
+            "ordered-content-block:24"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/kp",
+            3
+          ]
+        ]
+      },
+      {
+        "source": "color/l",
+        "target": "color/l",
+        "evidence": [
+          [
+            "color/l",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/l",
+            "xml-slot-votes:3/3"
+          ],
+          [
+            "color/l",
+            "xml-slot-votes:3/3"
+          ],
+          [
+            "color/l",
+            "xml-slot-votes:3/3"
+          ],
+          [
+            "color/l",
+            "ordered-content-block:67"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/l",
+            3
+          ]
+        ]
+      },
+      {
+        "source": "color/m",
+        "target": "color/m",
+        "evidence": [
+          [
+            "color/m",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/m",
+            "xml-slot-votes:213/213"
+          ],
+          [
+            "color/m",
+            "xml-slot-votes:233/233"
+          ],
+          [
+            "color/m",
+            "xml-slot-votes:233/233"
+          ],
+          [
+            "color/m",
+            "ordered-content-block:67"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/m",
+            233
+          ]
+        ]
+      },
+      {
+        "source": "color/mr",
+        "target": "color/mr",
+        "evidence": [
+          [
+            "color/mr",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/mr",
+            "ordered-content-block:39"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/ms",
+        "target": "color/ms",
+        "evidence": [
+          [
+            "color/ms",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/ms",
+            "xml-slot-votes:4/4"
+          ],
+          [
+            "color/ms",
+            "xml-slot-votes:4/4"
+          ],
+          [
+            "color/ms",
+            "xml-slot-votes:4/4"
+          ],
+          [
+            "color/ms",
+            "ordered-content-block:39"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/ms",
+            4
+          ]
+        ]
+      },
+      {
+        "source": "color/mv",
+        "target": "color/mv",
+        "evidence": [
+          [
+            "color/mv",
+            "unique-color-value"
+          ],
+          [
+            "color/mv",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/mv",
+            "xml-slot-votes:4/4"
+          ],
+          [
+            "color/mv",
+            "xml-slot-votes:4/4"
+          ],
+          [
+            "color/mv",
+            "xml-slot-votes:4/4"
+          ],
+          [
+            "color/mv",
+            "ordered-content-block:9"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/mv",
+            4
+          ]
+        ]
+      },
+      {
+        "source": "color/mw",
+        "target": "color/mw",
+        "evidence": [
+          [
+            "color/mw",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/mw",
+            "ordered-content-block:9"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/n",
+        "target": "color/n",
+        "evidence": [
+          [
+            "color/n",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/n",
+            "xml-slot-votes:4/4"
+          ],
+          [
+            "color/n",
+            "xml-slot-votes:4/4"
+          ],
+          [
+            "color/n",
+            "ordered-content-block:20"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/n",
+            4
+          ]
+        ]
+      },
+      {
+        "source": "color/n0",
+        "target": "color/n0",
+        "evidence": [
+          [
+            "color/n0",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/n0",
+            "ordered-content-block:9"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/n0",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/n1",
+        "target": "color/n1",
+        "evidence": [
+          [
+            "color/n1",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/n1",
+            "ordered-content-block:9"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/n5",
+        "target": "color/n5",
+        "evidence": [
+          [
+            "color/n5",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/n5",
+            "ordered-content-block:44"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/n8",
+        "target": "color/n8",
+        "evidence": [
+          [
+            "color/n8",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/n8",
+            "xml-with-mapped-refs"
+          ],
+          [
+            "color/n8",
+            "ordered-content-block:44"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/n8",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/n_",
+        "target": "color/n_",
+        "evidence": [
+          [
+            "color/n_",
+            "unique-color-value"
+          ],
+          [
+            "color/n_",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/n_",
+            "ordered-content-block:44"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/nb",
+        "target": "color/nb",
+        "evidence": [
+          [
+            "color/nb",
+            "unique-color-value"
+          ],
+          [
+            "color/nb",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/nb",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/nb",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/nb",
+            "ordered-content-block:44"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/nb",
+            2
+          ]
+        ]
+      },
+      {
+        "source": "color/ni",
+        "target": "color/ni",
+        "evidence": [
+          [
+            "color/ni",
+            "unique-color-value"
+          ],
+          [
+            "color/ni",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/ni",
+            "ordered-content-block:44"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/ni",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/no",
+        "target": "color/no",
+        "evidence": [
+          [
+            "color/no",
+            "unique-color-value"
+          ],
+          [
+            "color/no",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/no",
+            "ordered-content-block:44"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/no",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/nq",
+        "target": "color/nq",
+        "evidence": [
+          [
+            "color/nq",
+            "unique-color-value"
+          ],
+          [
+            "color/nq",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/nq",
+            "ordered-content-block:44"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/nq",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/o",
+        "target": "color/o",
+        "evidence": [
+          [
+            "color/o",
+            "unique-color-value"
+          ],
+          [
+            "color/o",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/o",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/o",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/o",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/o",
+            "ordered-content-block:16"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/o",
+            2
+          ]
+        ]
+      },
+      {
+        "source": "color/on",
+        "target": "color/on",
+        "evidence": [
+          [
+            "color/on",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/on",
+            "xml-slot-votes:7/7"
+          ],
+          [
+            "color/on",
+            "xml-slot-votes:7/7"
+          ],
+          [
+            "color/on",
+            "xml-slot-votes:7/7"
+          ],
+          [
+            "color/on",
+            "ordered-content-block:10"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/on",
+            7
+          ]
+        ]
+      },
+      {
+        "source": "color/ou",
+        "target": "color/ou",
+        "evidence": [
+          [
+            "color/ou",
+            "unique-color-value"
+          ],
+          [
+            "color/ou",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/ou",
+            "ordered-content-block:133"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/ou",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/ov",
+        "target": "color/ov",
+        "evidence": [
+          [
+            "color/ov",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/ov",
+            "ordered-content-block:133"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/p",
+        "target": "color/p",
+        "evidence": [
+          [
+            "color/p",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/p",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/p",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/p",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/p",
+            "ordered-content-block:16"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/p",
+            2
+          ]
+        ]
+      },
+      {
+        "source": "color/q6",
+        "target": "color/q6",
+        "evidence": [
+          [
+            "color/q6",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/q6",
+            "xml-slot-votes:5/5"
+          ],
+          [
+            "color/q6",
+            "xml-slot-votes:5/5"
+          ],
+          [
+            "color/q6",
+            "xml-slot-votes:5/5"
+          ],
+          [
+            "color/q6",
+            "ordered-content-block:99"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/q6",
+            5
+          ]
+        ]
+      },
+      {
+        "source": "color/qy",
+        "target": "color/qy",
+        "evidence": [
+          [
+            "color/qy",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/qy",
+            "ordered-content-block:99"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/qz",
+        "target": "color/qz",
+        "evidence": [
+          [
+            "color/qz",
+            "unique-color-value"
+          ],
+          [
+            "color/qz",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/qz",
+            "ordered-content-block:99"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/r",
+        "target": "color/r",
+        "evidence": [
+          [
+            "color/r",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/r",
+            "xml-slot-votes:4/4"
+          ],
+          [
+            "color/r",
+            "xml-slot-votes:4/4"
+          ],
+          [
+            "color/r",
+            "xml-slot-votes:4/4"
+          ],
+          [
+            "color/r",
+            "ordered-content-block:16"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/r",
+            4
+          ]
+        ]
+      },
+      {
+        "source": "color/s",
+        "target": "color/s",
+        "evidence": [
+          [
+            "color/s",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/s",
+            "ordered-content-block:16"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/s",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/s1",
+        "target": "color/s1",
+        "evidence": [
+          [
+            "color/s1",
+            "unique-color-value"
+          ],
+          [
+            "color/s1",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/s1",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/s1",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/s1",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/s1",
+            "ordered-content-block:101"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/s1",
+            2
+          ]
+        ]
+      },
+      {
+        "source": "color/s2",
+        "target": "color/s2",
+        "evidence": [
+          [
+            "color/s2",
+            "unique-color-value"
+          ],
+          [
+            "color/s2",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/s2",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/s2",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/s2",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/s2",
+            "ordered-content-block:101"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/s2",
+            2
+          ]
+        ]
+      },
+      {
+        "source": "color/s7",
+        "target": "color/s7",
+        "evidence": [
+          [
+            "color/s7",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/s7",
+            "ordered-content-block:101"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/s7",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/s8",
+        "target": "color/s8",
+        "evidence": [
+          [
+            "color/s8",
+            "unique-color-value"
+          ],
+          [
+            "color/s8",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/s8",
+            "ordered-content-block:101"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/s_",
+        "target": "color/s_",
+        "evidence": [
+          [
+            "color/s_",
+            "unique-color-value"
+          ],
+          [
+            "color/s_",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/s_",
+            "ordered-content-block:101"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/s_",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/sg",
+        "target": "color/sg",
+        "evidence": [
+          [
+            "color/sg",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/sg",
+            "xml-slot-votes:14/14"
+          ],
+          [
+            "color/sg",
+            "xml-slot-votes:14/14"
+          ],
+          [
+            "color/sg",
+            "xml-slot-votes:14/14"
+          ],
+          [
+            "color/sg",
+            "ordered-content-block:101"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/sg",
+            14
+          ]
+        ]
+      },
+      {
+        "source": "color/sl",
+        "target": "color/sl",
+        "evidence": [
+          [
+            "color/sl",
+            "unique-color-value"
+          ],
+          [
+            "color/sl",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/sl",
+            "ordered-content-block:101"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/sl",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/sr",
+        "target": "color/sr",
+        "evidence": [
+          [
+            "color/sr",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/sr",
+            "ordered-content-block:101"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/t",
+        "target": "color/t",
+        "evidence": [
+          [
+            "color/t",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/t",
+            "xml-slot-votes:26/26"
+          ],
+          [
+            "color/t",
+            "xml-slot-votes:26/26"
+          ],
+          [
+            "color/t",
+            "xml-slot-votes:26/26"
+          ],
+          [
+            "color/t",
+            "ordered-content-block:16"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/t",
+            26
+          ]
+        ]
+      },
+      {
+        "source": "color/ta",
+        "target": "color/ta",
+        "evidence": [
+          [
+            "color/ta",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/ta",
+            "xml-slot-votes:20/20"
+          ],
+          [
+            "color/ta",
+            "xml-slot-votes:20/20"
+          ],
+          [
+            "color/ta",
+            "xml-slot-votes:20/20"
+          ],
+          [
+            "color/ta",
+            "ordered-content-block:101"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/ta",
+            20
+          ]
+        ]
+      },
+      {
+        "source": "color/tt",
+        "target": "color/tt",
+        "evidence": [
+          [
+            "color/tt",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/tt",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/tt",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/tt",
+            "ordered-content-block:101"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/tt",
+            2
+          ]
+        ]
+      },
+      {
+        "source": "color/tv",
+        "target": "color/tv",
+        "evidence": [
+          [
+            "color/tv",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/tv",
+            "xml-slot-votes:5/5"
+          ],
+          [
+            "color/tv",
+            "xml-slot-votes:5/5"
+          ],
+          [
+            "color/tv",
+            "xml-slot-votes:5/5"
+          ],
+          [
+            "color/tv",
+            "ordered-content-block:101"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/tv",
+            5
+          ]
+        ]
+      },
+      {
+        "source": "color/tw",
+        "target": "color/tw",
+        "evidence": [
+          [
+            "color/tw",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/tw",
+            "xml-slot-votes:6/6"
+          ],
+          [
+            "color/tw",
+            "xml-slot-votes:6/6"
+          ],
+          [
+            "color/tw",
+            "xml-slot-votes:6/6"
+          ],
+          [
+            "color/tw",
+            "ordered-content-block:16"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/tw",
+            6
+          ]
+        ]
+      },
+      {
+        "source": "color/u6",
+        "target": "color/u6",
+        "evidence": [
+          [
+            "color/u6",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/u6",
+            "xml-slot-votes:116/116"
+          ],
+          [
+            "color/u6",
+            "xml-slot-votes:118/118"
+          ],
+          [
+            "color/u6",
+            "xml-slot-votes:118/118"
+          ],
+          [
+            "color/u6",
+            "ordered-content-block:101"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/u6",
+            118
+          ]
+        ]
+      },
+      {
+        "source": "color/ub",
+        "target": "color/ub",
+        "evidence": [
+          [
+            "color/ub",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/ub",
+            "ordered-content-block:54"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/up",
+        "target": "color/up",
+        "evidence": [
+          [
+            "color/up",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/up",
+            "ordered-content-block:54"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/uv",
+        "target": "color/uv",
+        "evidence": [
+          [
+            "color/uv",
+            "unique-color-value"
+          ],
+          [
+            "color/uv",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/uv",
+            "ordered-content-block:54"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/uv",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/ux",
+        "target": "color/ux",
+        "evidence": [
+          [
+            "color/ux",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/ux",
+            "ordered-content-block:54"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/vf",
+        "target": "color/vf",
+        "evidence": [
+          [
+            "color/vf",
+            "unique-color-value"
+          ],
+          [
+            "color/vf",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/vf",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/vf",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/vf",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/vf",
+            "ordered-content-block:54"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/vf",
+            2
+          ]
+        ]
+      },
+      {
+        "source": "color/vk",
+        "target": "color/vk",
+        "evidence": [
+          [
+            "color/vk",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/vk",
+            "xml-slot-votes:12/12"
+          ],
+          [
+            "color/vk",
+            "xml-slot-votes:12/12"
+          ],
+          [
+            "color/vk",
+            "xml-slot-votes:12/12"
+          ],
+          [
+            "color/vk",
+            "ordered-content-block:54"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/vk",
+            12
+          ]
+        ]
+      },
+      {
+        "source": "color/vm",
+        "target": "color/vm",
+        "evidence": [
+          [
+            "color/vm",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/vm",
+            "xml-slot-votes:20/20"
+          ],
+          [
+            "color/vm",
+            "xml-slot-votes:20/20"
+          ],
+          [
+            "color/vm",
+            "xml-slot-votes:20/20"
+          ],
+          [
+            "color/vm",
+            "ordered-content-block:54"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/vm",
+            20
+          ]
+        ]
+      },
+      {
+        "source": "color/vo",
+        "target": "color/vo",
+        "evidence": [
+          [
+            "color/vo",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/vo",
+            "xml-slot-votes:125/125"
+          ],
+          [
+            "color/vo",
+            "xml-slot-votes:128/128"
+          ],
+          [
+            "color/vo",
+            "xml-slot-votes:128/128"
+          ],
+          [
+            "color/vo",
+            "ordered-content-block:54"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/vo",
+            128
+          ]
+        ]
+      },
+      {
+        "source": "color/xa",
+        "target": "color/xa",
+        "evidence": [
+          [
+            "color/xa",
+            "unique-color-value"
+          ],
+          [
+            "color/xa",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/xa",
+            "xml-slot-votes:4/4"
+          ],
+          [
+            "color/xa",
+            "xml-slot-votes:4/4"
+          ],
+          [
+            "color/xa",
+            "xml-slot-votes:4/4"
+          ],
+          [
+            "color/xa",
+            "ordered-content-block:205"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/xa",
+            4
+          ]
+        ]
+      },
+      {
+        "source": "color/xb",
+        "target": "color/xb",
+        "evidence": [
+          [
+            "color/xb",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/xb",
+            "xml-slot-votes:7/7"
+          ],
+          [
+            "color/xb",
+            "xml-slot-votes:7/7"
+          ],
+          [
+            "color/xb",
+            "xml-slot-votes:7/7"
+          ],
+          [
+            "color/xb",
+            "ordered-content-block:205"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/xb",
+            7
+          ]
+        ]
+      },
+      {
+        "source": "color/xg",
+        "target": "color/xg",
+        "evidence": [
+          [
+            "color/xg",
+            "unique-color-value"
+          ],
+          [
+            "color/xg",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/xg",
+            "ordered-content-block:205"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/xg",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/xi",
+        "target": "color/xi",
+        "evidence": [
+          [
+            "color/xi",
+            "unique-color-value"
+          ],
+          [
+            "color/xi",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/xi",
+            "ordered-content-block:205"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/xj",
+        "target": "color/xj",
+        "evidence": [
+          [
+            "color/xj",
+            "unique-color-value"
+          ],
+          [
+            "color/xj",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/xj",
+            "ordered-content-block:205"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/xl",
+        "target": "color/xl",
+        "evidence": [
+          [
+            "color/xl",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/xl",
+            "ordered-content-block:205"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/xl",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/xr",
+        "target": "color/xr",
+        "evidence": [
+          [
+            "color/xr",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/xr",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/xr",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/xr",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/xr",
+            "ordered-content-block:205"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/xr",
+            2
+          ]
+        ]
+      },
+      {
+        "source": "color/xw",
+        "target": "color/xw",
+        "evidence": [
+          [
+            "color/xw",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/xw",
+            "xml-slot-votes:11/11"
+          ],
+          [
+            "color/xw",
+            "xml-slot-votes:11/11"
+          ],
+          [
+            "color/xw",
+            "xml-slot-votes:11/11"
+          ],
+          [
+            "color/xw",
+            "ordered-content-block:205"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/xw",
+            11
+          ]
+        ]
+      },
+      {
+        "source": "color/xy",
+        "target": "color/xy",
+        "evidence": [
+          [
+            "color/xy",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/xy",
+            "xml-slot-votes:8/8"
+          ],
+          [
+            "color/xy",
+            "xml-slot-votes:8/8"
+          ],
+          [
+            "color/xy",
+            "xml-slot-votes:8/8"
+          ],
+          [
+            "color/xy",
+            "ordered-content-block:205"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/xy",
+            8
+          ]
+        ]
+      },
+      {
+        "source": "color/xz",
+        "target": "color/xz",
+        "evidence": [
+          [
+            "color/xz",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/xz",
+            "xml-slot-votes:4/4"
+          ],
+          [
+            "color/xz",
+            "xml-slot-votes:4/4"
+          ],
+          [
+            "color/xz",
+            "xml-slot-votes:4/4"
+          ],
+          [
+            "color/xz",
+            "ordered-content-block:205"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/xz",
+            4
+          ]
+        ]
+      },
+      {
+        "source": "color/y1",
+        "target": "color/y1",
+        "evidence": [
+          [
+            "color/y1",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/y1",
+            "xml-with-mapped-refs"
+          ],
+          [
+            "color/y1",
+            "ordered-content-block:205"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/y1",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/y2",
+        "target": "color/y2",
+        "evidence": [
+          [
+            "color/y2",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/y2",
+            "xml-slot-votes:3/3"
+          ],
+          [
+            "color/y2",
+            "xml-slot-votes:3/3"
+          ],
+          [
+            "color/y2",
+            "xml-slot-votes:3/3"
+          ],
+          [
+            "color/y2",
+            "ordered-content-block:205"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/y2",
+            3
+          ]
+        ]
+      },
+      {
+        "source": "color/y4",
+        "target": "color/y4",
+        "evidence": [
+          [
+            "color/y4",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/y4",
+            "xml-slot-votes:10/10"
+          ],
+          [
+            "color/y4",
+            "xml-slot-votes:10/10"
+          ],
+          [
+            "color/y4",
+            "xml-slot-votes:10/10"
+          ],
+          [
+            "color/y4",
+            "ordered-content-block:205"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/y4",
+            10
+          ]
+        ]
+      },
+      {
+        "source": "color/yd",
+        "target": "color/yd",
+        "evidence": [
+          [
+            "color/yd",
+            "unique-color-value"
+          ],
+          [
+            "color/yd",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/yd",
+            "ordered-content-block:205"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/yl",
+        "target": "color/yl",
+        "evidence": [
+          [
+            "color/yl",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/yl",
+            "unique-xml-structure"
+          ],
+          [
+            "color/yl",
+            "ordered-content-block:205"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/yp",
+        "target": "color/yp",
+        "evidence": [
+          [
+            "color/yp",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/yp",
+            "xml-with-mapped-refs"
+          ],
+          [
+            "color/yp",
+            "ordered-content-block:205"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/zf",
+        "target": "color/zf",
+        "evidence": [
+          [
+            "color/zf",
+            "unique-color-value"
+          ],
+          [
+            "color/zf",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/zf",
+            "ordered-content-block:205"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/zf",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/a2_",
+        "target": "color/a2_",
+        "evidence": [
+          [
+            "color/a2_",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a2_",
+            "ordered-content-block:403"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/a2_",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/a_w",
+        "target": "color/a_w",
+        "evidence": [
+          [
+            "color/a_w",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/a_w",
+            "xml-slot-votes:4/4"
+          ],
+          [
+            "color/a_w",
+            "xml-slot-votes:4/4"
+          ],
+          [
+            "color/a_w",
+            "xml-slot-votes:4/4"
+          ],
+          [
+            "color/a_w",
+            "ordered-content-block:55"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/a_w",
+            4
+          ]
+        ]
+      },
+      {
+        "source": "color/agj",
+        "target": "color/agp",
+        "evidence": [
+          [
+            "color/agp",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/agp",
+            "ordered-content-block:58"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/agp",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/agp",
+        "target": "color/agv",
+        "evidence": [
+          [
+            "color/agv",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/agv",
+            "ordered-content-block:58"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/agv",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/agq",
+        "target": "color/agw",
+        "evidence": [
+          [
+            "color/agw",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/agw",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/agw",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/agw",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "color/agw",
+            "ordered-content-block:58"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/agw",
+            2
+          ]
+        ]
+      },
+      {
+        "source": "drawable/a53",
+        "target": "drawable/a53",
+        "evidence": [
+          [
+            "drawable/a53",
+            "file-hash"
+          ],
+          [
+            "drawable/a53",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "drawable/a53",
+            "unique-xml-structure"
+          ],
+          [
+            "drawable/a53",
+            "xml-slot-votes:5/5"
+          ],
+          [
+            "drawable/a53",
+            "xml-slot-votes:5/5"
+          ],
+          [
+            "drawable/a53",
+            "xml-slot-votes:5/5"
+          ],
+          [
+            "drawable/a53",
+            "ordered-content-block:27"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "drawable/a53",
+            5
+          ]
+        ]
+      },
+      {
+        "source": "drawable/a54",
+        "target": "drawable/a54",
+        "evidence": [
+          [
+            "drawable/a54",
+            "file-hash"
+          ],
+          [
+            "drawable/a54",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "drawable/a54",
+            "unique-xml-structure"
+          ],
+          [
+            "drawable/a54",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "drawable/a54",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "drawable/a54",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "drawable/a54",
+            "ordered-content-block:27"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "drawable/a54",
+            2
+          ]
+        ]
+      },
+      {
+        "source": "drawable/a7s",
+        "target": "drawable/a7s",
+        "evidence": [
+          [
+            "drawable/a7s",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "drawable/a7s",
+            "unique-xml-structure"
+          ],
+          [
+            "drawable/a7s",
+            "ordered-content-block:44"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "drawable/a8o",
+        "target": "drawable/a8o",
+        "evidence": [
+          [
+            "drawable/a8o",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "drawable/a8o",
+            "unique-xml-structure"
+          ],
+          [
+            "drawable/a8o",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "drawable/a8o",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "drawable/a8o",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "drawable/a8o",
+            "ordered-content-block:16"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "drawable/a8o",
+            2
+          ]
+        ]
+      },
+      {
+        "source": "drawable/b8d",
+        "target": "drawable/b8d",
+        "evidence": [
+          [
+            "drawable/b8d",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "drawable/b8d",
+            "unique-xml-structure"
+          ],
+          [
+            "drawable/b8d",
+            "xml-slot-votes:8/8"
+          ],
+          [
+            "drawable/b8d",
+            "xml-slot-votes:8/8"
+          ],
+          [
+            "drawable/b8d",
+            "xml-slot-votes:8/8"
+          ],
+          [
+            "drawable/b8d",
+            "ordered-content-block:98"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "drawable/b8d",
+            8
+          ]
+        ]
+      },
+      {
+        "source": "drawable/b8e",
+        "target": "drawable/b8e",
+        "evidence": [
+          [
+            "drawable/b8e",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "drawable/b8e",
+            "unique-xml-structure"
+          ],
+          [
+            "drawable/b8e",
+            "xml-slot-votes:6/6"
+          ],
+          [
+            "drawable/b8e",
+            "xml-slot-votes:6/6"
+          ],
+          [
+            "drawable/b8e",
+            "xml-slot-votes:6/6"
+          ],
+          [
+            "drawable/b8e",
+            "ordered-content-block:98"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "drawable/b8e",
+            6
+          ]
+        ]
+      },
+      {
+        "source": "drawable/b8f",
+        "target": "drawable/b8f",
+        "evidence": [
+          [
+            "drawable/b8f",
+            "ordered-content-block:98"
+          ],
+          [
+            "drawable/b8f",
+            "identical-xml-with-named-references"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "drawable/b8g",
+        "target": "drawable/b8g",
+        "evidence": [
+          [
+            "drawable/b8g",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "drawable/b8g",
+            "unique-xml-structure"
+          ],
+          [
+            "drawable/b8g",
+            "ordered-content-block:98"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "drawable/b8h",
+        "target": "drawable/b8h",
+        "evidence": [
+          [
+            "drawable/b8h",
+            "ordered-content-block:98"
+          ],
+          [
+            "drawable/b8h",
+            "identical-xml-with-named-references"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "drawable/b8i",
+        "target": "drawable/b8i",
+        "evidence": [
+          [
+            "drawable/b8i",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "drawable/b8i",
+            "xml-slot-votes:63/63"
+          ],
+          [
+            "drawable/b8i",
+            "xml-with-mapped-refs"
+          ],
+          [
+            "drawable/b8i",
+            "xml-slot-votes:65/65"
+          ],
+          [
+            "drawable/b8i",
+            "xml-slot-votes:65/65"
+          ],
+          [
+            "drawable/b8i",
+            "ordered-content-block:98"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "drawable/b8i",
+            65
+          ]
+        ]
+      },
+      {
+        "source": "drawable/b8j",
+        "target": "drawable/b8j",
+        "evidence": [
+          [
+            "drawable/b8j",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "drawable/b8j",
+            "unique-xml-structure"
+          ],
+          [
+            "drawable/b8j",
+            "ordered-content-block:98"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "drawable/b8r",
+        "target": "drawable/b8r",
+        "evidence": [
+          [
+            "drawable/b8r",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "drawable/b8r",
+            "xml-with-mapped-refs"
+          ],
+          [
+            "drawable/b8r",
+            "ordered-content-block:132"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "drawable/b8r",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "drawable/bm4",
+        "target": "drawable/bm4",
+        "evidence": [
+          [
+            "drawable/bm4",
+            "file-hash"
+          ],
+          [
+            "drawable/bm4",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "drawable/bm4",
+            "ordered-content-block:297"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "drawable/bm4",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "drawable/cbr",
+        "target": "drawable/cbr",
+        "evidence": [
+          [
+            "drawable/cbr",
+            "file-hash"
+          ],
+          [
+            "drawable/cbr",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "drawable/cbr",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "drawable/cbr",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "drawable/cbr",
+            "xml-slot-votes:2/2"
+          ],
+          [
+            "drawable/cbr",
+            "ordered-content-block:104"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "drawable/cbr",
+            2
+          ]
+        ]
+      },
+      {
+        "source": "drawable/cbs",
+        "target": "drawable/cbs",
+        "evidence": [
+          [
+            "drawable/cbs",
+            "file-hash"
+          ],
+          [
+            "drawable/cbs",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "drawable/cbs",
+            "ordered-content-block:104"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "drawable/d_u",
+        "target": "drawable/dct",
+        "evidence": [
+          [
+            "drawable/dct",
+            "ordered-content-block:389"
+          ],
+          [
+            "drawable/dct",
+            "identical-xml-with-named-references"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "mipmap/b",
+        "target": "mipmap/b",
+        "evidence": [
+          [
+            "mipmap/b",
+            "file-hash"
+          ],
+          [
+            "mipmap/b",
+            "file-hash"
+          ],
+          [
+            "mipmap/b",
+            "file-hash"
+          ],
+          [
+            "mipmap/b",
+            "ordered-content-or-direct-ref"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "mipmap/b",
+            1
+          ]
+        ]
+      }
+    ],
+    "MonetWeChatBadge": [
+      {
+        "source": "color/Red_100",
+        "target": "color/Red_100",
+        "evidence": [
+          [
+            "color/Red_100",
+            "descriptive-name"
+          ],
+          [
+            "color/Red_100",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/Red_100",
+            "xml-slot-votes:29/29"
+          ],
+          [
+            "color/Red_100",
+            "xml-slot-votes:30/30"
+          ],
+          [
+            "color/Red_100",
+            "xml-slot-votes:30/30"
+          ],
+          [
+            "color/Red_100",
+            "ordered-content-block:134"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/Red_100",
+            30
+          ]
+        ]
+      },
+      {
+        "source": "color/ac",
+        "target": "color/ac",
+        "evidence": [
+          [
+            "color/ac",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/ac",
+            "xml-slot-votes:107/107"
+          ],
+          [
+            "color/ac",
+            "xml-slot-votes:115/115"
+          ],
+          [
+            "color/ac",
+            "xml-slot-votes:115/115"
+          ],
+          [
+            "color/ac",
+            "ordered-content-block:134"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/ac",
+            115
+          ]
+        ]
+      }
+    ],
+    "MonetWeChatChatBubble": [
+      {
+        "source": "color/Link_80",
+        "target": "color/Link_80",
+        "evidence": [
+          [
+            "color/Link_80",
+            "descriptive-name"
+          ],
+          [
+            "color/Link_80",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/Link_80",
+            "xml-slot-votes:10/10"
+          ],
+          [
+            "color/Link_80",
+            "xml-slot-votes:12/12"
+          ],
+          [
+            "color/Link_80",
+            "xml-slot-votes:12/12"
+          ],
+          [
+            "color/Link_80",
+            "ordered-content-block:134"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/Link_80",
+            12
+          ]
+        ]
+      },
+      {
+        "source": "color/Link_80_CARE",
+        "target": "color/Link_80_CARE",
+        "evidence": [
+          [
+            "color/Link_80_CARE",
+            "descriptive-name"
+          ],
+          [
+            "color/Link_80_CARE",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/Link_80_CARE",
+            "ordered-content-block:134"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/Link_80_Night_Mode",
+        "target": "color/Link_80_Night_Mode",
+        "evidence": [
+          [
+            "color/Link_80_Night_Mode",
+            "descriptive-name"
+          ],
+          [
+            "color/Link_80_Night_Mode",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/Link_80_Night_Mode",
+            "ordered-content-block:134"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/Link_80_Night_Mode",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "color/hu",
+        "target": "color/hu",
+        "evidence": [
+          [
+            "color/hu",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/hu",
+            "ordered-content-block:61"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/hx",
+        "target": "color/hx",
+        "evidence": [
+          [
+            "color/hx",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/hx",
+            "ordered-content-block:61"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/i_",
+        "target": "color/i_",
+        "evidence": [
+          [
+            "color/i_",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/i_",
+            "xml-slot-votes:10/10"
+          ],
+          [
+            "color/i_",
+            "xml-slot-votes:10/10"
+          ],
+          [
+            "color/i_",
+            "xml-slot-votes:10/10"
+          ],
+          [
+            "color/i_",
+            "ordered-content-block:61"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/i_",
+            10
+          ]
+        ]
+      },
+      {
+        "source": "drawable/bzp",
+        "target": "drawable/bzp",
+        "evidence": [
+          [
+            "drawable/bzp",
+            "file-hash"
+          ],
+          [
+            "drawable/bzp",
+            "file-hash"
+          ],
+          [
+            "drawable/bzp",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "drawable/bzp",
+            "ordered-content-block:178"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "drawable/bzp",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "drawable/bzq",
+        "target": "drawable/bzq",
+        "evidence": [
+          [
+            "drawable/bzq",
+            "file-hash"
+          ],
+          [
+            "drawable/bzq",
+            "file-hash"
+          ],
+          [
+            "drawable/bzq",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "drawable/bzq",
+            "ordered-content-block:178"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "drawable/bzu",
+        "target": "drawable/bzu",
+        "evidence": [
+          [
+            "drawable/bzu",
+            "file-hash"
+          ],
+          [
+            "drawable/bzu",
+            "file-hash"
+          ],
+          [
+            "drawable/bzu",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "drawable/bzu",
+            "ordered-content-block:178"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "drawable/bzu",
+            1
+          ]
+        ]
+      },
+      {
+        "source": "drawable/bzw",
+        "target": "drawable/bzw",
+        "evidence": [
+          [
+            "drawable/bzw",
+            "file-hash"
+          ],
+          [
+            "drawable/bzw",
+            "file-hash"
+          ],
+          [
+            "drawable/bzw",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "drawable/bzw",
+            "ordered-content-block:178"
+          ]
+        ],
+        "referenceVotes": []
+      }
+    ],
+    "MonetWeChatMultiSceneCorners": [
+      {
+        "source": "drawable/aj9",
+        "target": "drawable/aj9",
+        "evidence": [
+          [
+            "drawable/aj9",
+            "ordered-content-block:159"
+          ],
+          [
+            "drawable/aj9",
+            "identical-xml-with-named-references"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "drawable/bw7",
+        "target": "drawable/bw7",
+        "evidence": [
+          [
+            "drawable/bw7",
+            "file-hash"
+          ],
+          [
+            "drawable/bw7",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "drawable/bw7",
+            "ordered-content-block:125"
+          ]
+        ],
+        "referenceVotes": []
+      }
+    ],
+    "MonetWeChatSolidTab": [
+      {
+        "source": "color/bb",
+        "target": "color/bb",
+        "evidence": [
+          [
+            "color/bb",
+            "file-hash"
+          ],
+          [
+            "color/bb",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/bb",
+            "unique-xml-structure"
+          ],
+          [
+            "color/bb",
+            "ordered-content-block:133"
+          ]
+        ],
+        "referenceVotes": []
+      }
+    ],
+    "MonetWeChatBlurTab": [
+      {
+        "source": "color/bb",
+        "target": "color/bb",
+        "evidence": [
+          [
+            "color/bb",
+            "file-hash"
+          ],
+          [
+            "color/bb",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/bb",
+            "unique-xml-structure"
+          ],
+          [
+            "color/bb",
+            "ordered-content-block:133"
+          ]
+        ],
+        "referenceVotes": []
+      },
+      {
+        "source": "color/df",
+        "target": "color/df",
+        "evidence": [
+          [
+            "color/df",
+            "ordered-content-or-direct-ref"
+          ],
+          [
+            "color/df",
+            "ordered-content-block:133"
+          ]
+        ],
+        "referenceVotes": [
+          [
+            "color/df",
+            1
+          ]
+        ]
+      }
+    ]
+  }
+}

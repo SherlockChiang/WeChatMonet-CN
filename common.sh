@@ -11,20 +11,26 @@ SECONDARY_OVERLAY_SPECS="MonetWeChat:monet.com.tencent.mm ${CHAT_BUBBLE_OVERLAY_
 # Keep version gates in one place so the installer and action menu cannot drift.
 is_play_wechat_version() {
   case "$1" in
-    3084|3085) return 0 ;;
+    3084|3085|3182) return 0 ;;
     *) return 1 ;;
   esac
 }
 
 is_mainland_wechat_version() {
   case "$1" in
-    3140|3141|3160|3182) return 0 ;;
+    3140|3141|3160|3200) return 0 ;;
     *) return 1 ;;
   esac
 }
 
 is_supported_wechat_version() {
   is_play_wechat_version "$1" || is_mainland_wechat_version "$1"
+}
+
+# GP 8.0.79 also uses the separately audited image-backed bubble payload.
+# Channel identification must not select the legacy GP 8.0.72 shape overlays.
+uses_image_bubble_overlay() {
+  is_mainland_wechat_version "$1" || [ "$1" = "3182" ]
 }
 
 listen_volume_key() {
@@ -141,7 +147,7 @@ overlay_source_apk() {
   if [ -n "$version" ]; then
     candidate="$moddir/files/${name}-${version}.apk"
     [ -f "$candidate" ] && { echo "$candidate"; return 0; }
-    if [ "$version" = "3182" ]; then
+    if [ "$version" = "3182" ] || [ "$version" = "3200" ]; then
       case "$name" in
         MonetWeChat|MonetWeChatBadge|MonetWeChatChatBubble|MonetWeChatMultiSceneCorners|MonetWeChatSolidTab|MonetWeChatBlurTab)
           echo "! 缺少 ${name}-${version}.apk，不能使用旧版混淆资源。" >&2
@@ -171,6 +177,26 @@ install_static_overlay() {
     }
   fi
   return 0
+}
+
+refresh_versioned_overlays() {
+  local moddir="$1" name source_apk selected="" changed=0
+  # Preflight all selected files before modifying any of them. A channel
+  # switch must refresh the base and optional packages together.
+  for name in MonetWeChat MonetWeChatMultiSceneCorners MonetWeChatSolidTab \
+      MonetWeChatBlurTab "$CHAT_BUBBLE_OVERLAY_NAME" "$BADGE_OVERLAY_NAME"; do
+    [ -f "$moddir/system/priv-app/$name/$name.apk" ] || continue
+    source_apk=$(overlay_source_apk "$moddir" "$name") || return 1
+    selected="$selected $name"
+  done
+  for name in $selected; do
+    source_apk=$(overlay_source_apk "$moddir" "$name") || return 1
+    cmp -s "$source_apk" "$moddir/system/priv-app/$name/$name.apk" || changed=1
+    install_static_overlay "$moddir" "$name" || return 1
+  done
+  if [ "$changed" = "1" ]; then
+    echo "! 已切换到微信 ${WECHAT_VERSION_CODE} 专用资源；静态 RRO 需重启后重新扫描。"
+  fi
 }
 
 remove_static_overlay() {

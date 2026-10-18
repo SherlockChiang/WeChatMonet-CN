@@ -71,7 +71,7 @@ def private_name(name: str) -> str:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--wx-apk", required=True, help="8.0.79/3182 基础 APK")
+    parser.add_argument("--wx-apk", required=True, help="与映射中版本号、SHA256 一致的微信基础 APK")
     parser.add_argument(
         "--mapping",
         default=str(ROOT / "compat" / "3182.json"),

@@ -1,10 +1,10 @@
-# 3182 / CN12 验证记录
+# Play 3182 / CN12 验证记录
 
 日期：2026-10-14（Asia/Shanghai）
 
 ## 输入与构建
 
-- 微信 8.0.79，versionCode 3182；基线是实际大陆版 8.0.77 / 3160 APK。
+- 2026-10-18 更正：目标为 **Play 版**微信 8.0.79，versionCode 3182；APK 构建标签为 `Android_Wechat_RELEASE_GP_AppBundle`，并非 CN 版。基线是大陆版 8.0.77 / 3160 APK。此前真机与截图结论仅适用于该 Play 包。
 - 源与目标 APK 的 SHA256 固定于 `3182.json`；资源映射证据见 `3182-audit.json`。
 - 六个版本化 APK 均通过 zipalign 与 v3 签名验证。
 - 六个 APK 的内部资源 ID、配置值、引用 ID、XML 和图片字节与对应源包一致，仅资源名按完整清单变更。

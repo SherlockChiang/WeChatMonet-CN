@@ -21,10 +21,12 @@ main() {
     return 1
   fi
 
+  refresh_versioned_overlays "$MODDIR" || return 1
+
   # Mainland WeChat has a separate image-backed 9-patch bubble package. Keep
   # it staged before either action-menu branch so secondary users receive the
   # same package as the primary user.
-  if is_mainland_wechat_version "$version_code"; then
+  if uses_image_bubble_overlay "$version_code"; then
     install_mainland_bubble_overlay "$MODDIR" "-" || {
       echo '! 大陆版 Monet 会话气泡安装失败。'
       return 1
@@ -40,13 +42,13 @@ main() {
   echo '音量- = 依次配置气泡和底栏'
   if listen_volume_key; then
     install_for_secondary_users "$MODDIR" || echo '! 部分次要用户覆盖未能启用，请查看上方错误。'
-    if is_mainland_wechat_version "$version_code"; then
+    if uses_image_bubble_overlay "$version_code"; then
       bubble_users=$(list_target_users)
       enable_chat_bubble_overlay_for_users "$bubble_users" || \
         echo '! 大陆版 Monet 会话气泡已安装，但当前用户尚未注册新 RRO；请重启一次设备。'
     fi
   else
-    if is_mainland_wechat_version "$version_code"; then
+    if uses_image_bubble_overlay "$version_code"; then
       bubble_users=$(list_target_users)
       if enable_chat_bubble_overlay_for_users "$bubble_users"; then
         echo '- 已启用大陆版 Monet 会话气泡。'

@@ -32,7 +32,7 @@ restore_overlay_state() {
   # package; mainland builds use the dedicated image-backed RRO below.
   set_overlay_state "$user_id" "monet.com.tencent.mm" enable
 
-  if is_mainland_wechat_version "$version_code"; then
+  if uses_image_bubble_overlay "$version_code"; then
     if [ -f "$MODDIR/system/priv-app/$CHAT_BUBBLE_OVERLAY_NAME/$CHAT_BUBBLE_OVERLAY_NAME.apk" ]; then
       set_overlay_state "$user_id" "$CHAT_BUBBLE_OVERLAY_PACKAGE" enable
     fi

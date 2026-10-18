@@ -18,6 +18,11 @@ if ! is_supported_wechat_version "$version_code"; then
   exit 0
 fi
 
+refresh_versioned_overlays "$MODDIR" || {
+  echo '! 当前微信版本资源不完整，停止刷新覆盖。'
+  exit 1
+}
+
 if [ "$(get_conf_value "$CONFIG" "is_first_install" "0")" = "1" ] && [ "$(get_conf_value "$CONFIG" "enable_multi_user" "0")" = "1" ]; then
   # Register every staged system overlay before any per-user enable attempt.
   # Otherwise a newly added package fails once for secondary users and needs
@@ -28,7 +33,7 @@ fi
 # Keep the mainland-only 9-patch bubble package present in both the module
 # metadata tree and Meta-OverlayFS content tree. The package is static, so a
 # first install may still require the next boot for PackageManager to scan it.
-if is_mainland_wechat_version "$version_code"; then
+if uses_image_bubble_overlay "$version_code"; then
   if install_mainland_bubble_overlay "$MODDIR" "-"; then
     bubble_users=$(list_target_users)
     if ! enable_chat_bubble_overlay_for_users "$bubble_users"; then
